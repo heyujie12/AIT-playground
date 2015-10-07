@@ -1,0 +1,25 @@
+# This is initial version of listing Question Bank user stories
+
+As a teacher, I want the game has different levels for different students, so that they can do proper exercise.
+
+As a teacher, I want the game can automatically adjust difficulty, so that students can improve their maths skills.
+
+As a teacher, I want the game can provide some difficult questions for very talented students, so that they can challenge themselves.
+
+As a teacher, I want there will be all kinds of questions.
+
+As a teacher, I want the questions don't repeat often, so that students have to caculate every question.
+
+
+
+As a student, I want the game don't be too hard for my age, so that I don't lose interests.
+
+As a student, I want the game slowly improve difficulty, so that I can really improve my maths.
+
+As a student, I want the questions are closely related to my current study.
+
+
+
+As a parent, I want the questions not too hard for my child.
+             I want the questions not too simple for my child.
+
