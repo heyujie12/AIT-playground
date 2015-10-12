@@ -1,0 +1,36 @@
+1) As a teacher/parent I want to be able to get a report on a particular student so I can see his/her progress.
+ - The report should tell me if the student is getting faster overall at answering questions compared to previous results.
+ - The report should tell me how fast the student answers questions on addition, subtraction, multiplication and division.
+ - The report should tell me how fast the student is at addition, subtraction, multiplication and division compared to other students in the class. 
+	For example, above average on addition, below average on subtraction etc
+ - The report should list the tables the student is strong in. For example, student is good at eight times tables
+ - The report should list the tables the student is weak in. For example, student needs improvement in the eight times tables.
+
+2) As a teacher I want to be able to get a report on a the entire class so I can see the class's progress.
+ - I want the report to tell me if the class are getting faster or slower on average each time they use the app.
+ - I want the report to rank the students from fastest to slowest and list their best and worst tables.
+ - In this report I want the report to tell me what tables the class are fast at answering on average and what tables the class is slow at answering.
+
+3) As a student I want to see a report on my results after using the app.
+ - The report should show the student's overall progress compared to previous times on the app.
+ - The app should list the tables the student is strong in.
+ - The app should list the tables the student needs to improve upon.
+
+In order to produce the reports the following information needs to be stored:
+
+the name of the student
+the date/time/session when the student played the game
+the questions the student was asked during that game session
+the time it took to get the correct answer for each question
+
+The code needs to be able to produce the following analysis:
+
+The average speed of the student at answering questions
+The average speed of the student at answering overall questions on addition
+The average speed of the student at answering overall questions on multiplication
+The average speed of the student at answering overall questions on subtraction
+The average speed of the student at answering overall questions on division
+The average speed of the student at answering specific questions on each of the tables
+For example, the student's speed on questions from the four times tables and the five subtraction tables should be calculated.
+The code needs to determine if a student's knowledge of a table needs more work based on the speed with which the student answered questions on that table.
+The code needs to be able to rank the students by the speed at which they answered the questions.

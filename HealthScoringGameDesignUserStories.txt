@@ -1,0 +1,37 @@
+As a user I expect to see a score displayed on the screen
+•        The score increases as questions are answered correctly, Score never decreases as the game is for children
+•        Score streaks can be obtained by getting multiple answers correct in a row which adds multiplier to the score
+
+As a user I expect to see health/lives displayed on the screen
+• 	 The health indicates how many more answers they can get wrong before the game finishes   
+•    	 This will be displayed as hearts or something like this   
+
+As a user I expect to see a name on the screen
+•	 The name will also be colour and obvious so the child can belong to the game.
+	
+As a user I want to see a Character on the screen
+•        The character must move from the middle of the screen towards the left hand side of the screen
+•        The rate at which the character moves is dependent on the time the student has to answer the question
+•        There should be an enemy NPC on the left side of the screen which indicates 0 seconds left i.e. when the character gets to the NPC it means no time left 
+
+As a user I expect there to be questions displayed clearly on the screen
+•	The questions will come across the screen from right to left 
+•	When it gets to the middle that’s when the question timer will start and the character will start moving will start	 
+
+As a user I expect to see the numbers on the screen and be able to interact with them
+•	These numbers must be big and colourful and intractable
+•	The numbers will be 0-9 and a back button
+
+As a user I expect to be able to answer the questions using the numbers displayed on screen
+•	If the answer requires one digit then a " _ " will be displayed and the user can enter a number and or delete a number using the back button.
+•	If the answer requires two digits then a " _ _ " will be displayed and the user can enter a number and or delete a number using the back button.
+
+As a user when I answer the question correctly I expect the game will recognize this reward me and move on
+•	There is no submit answer in this situation. Only correct answers can move the questions along
+•	The answer is only deemed incorrect when the timer runs out
+•	The character will move back to the middle of the screen when it answered correctly at the same time as the question is rolling in
+•	There is a cap of 20 questions that can be answered
+
+As a user when I don’t answer the question in time I expect the game to inform me of this and move on
+•	The user will lose health when not answered in time
+•	If there is no health remaining the game will finish

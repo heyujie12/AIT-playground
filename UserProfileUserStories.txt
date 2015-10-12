@@ -1,0 +1,18 @@
+# This is initial version of listing USER PROFILE user story points
+
+As a teacher, I expect to be able to create new user profiles for each student.
+-I expect each new user profile created to have the functionality to include a name , age , class , mark and learning history for each child.
+-I expect to be able to add extra information on the child about the child's parent name and email address that will be used to contact them to provide feedback on the childs progression.
+
+As a teacher , I expect to be able to access a list of all the user profile information in the system.
+- I expect to be able to view each childs individual information
+- I expect to be able to view the childs current high score and learning history/score history to monitor progression.
+
+As a teacher , I expect to be able to edit user profile information so that I may correct or update incorrect information in a user profile.
+As a teacher , I expect to be able to search for individual user profiles by name.
+
+As a parent , I expect to be able to log in to the system to access my childs user profile information.
+As a parent , I expect to be able view the information.
+
+As a child , I expect to be able to access my user profile information so that I can view my results.
+As a child , I expect to be able to access my user profile so I can gain access to the maths game.
