@@ -22,8 +22,8 @@ Priority	User Story
 		6 As a child I want to be able to see the numbers on the screen and be able to interact with them		
 		7 As a child I want to be able to answer the questions using the numbers displayed on screen
 		8 As a child when I answer the question correctly I want the game will recognize this reward me and move on
-		9 As a child when I don’t answer the question in time I want the game to inform me of this and move on
-		24 As a child, I want system to apply machine learning algorithms to increase and decrease difficulty level in game so that questions are "suitable" to my knowledge.
+		9 As a child when I donâ€™t answer the question in time I want the game to inform me of this and move on
+		24 As a child, I want system to adapt based on my ability so that I can learn more appropriately.
 		 ^ 16 As a teacher, I want the game to have different levels for different students, so that they can do proper exercise.
 		 ^ 25 As a child, I can view and sense the difficulty level in game.
 		 ^ 26 As a child, I shall feel challenged if difficulty level increases.
@@ -49,71 +49,71 @@ Health Scoring and Game Design User Stories:
 
 1)
 As a child I want to be able to see a score displayed on the screen
-•        The score increases as questions are answered correctly, Score never decreases as the game is for children
-•        Score streaks can be obtained by getting multiple answers correct in a row which adds multiplier to the score
-•	 The score will be displayed on the top left part of the screen
+â€¢        The score increases as questions are answered correctly, Score never decreases as the game is for children
+â€¢        Score streaks can be obtained by getting multiple answers correct in a row which adds multiplier to the score
+â€¢	 The score will be displayed on the top left part of the screen
 Success: The score is displayed to the top of the screen near the middle left. Score increases upon question correct.
 Failure: Score does not increase when question is answered correctly. Score is not displayed correctly
 
 2)
 As a child I want to be able to see health/lives displayed on the screen
-• 	 The health indicates how many more answers they can get wrong before the game finishes   
-•    	 This will be displayed as hearts or something like this   
-•	 The health will be displayed on the top left part of the screen
+â€¢ 	 The health indicates how many more answers they can get wrong before the game finishes   
+â€¢    	 This will be displayed as hearts or something like this   
+â€¢	 The health will be displayed on the top left part of the screen
 Success: The health is displayed to the top of the screen near the middle right. Its displayed using hearts and hearts are lost when question is not answered
 Failure: Health does not decrease when question not answered. Health is not displayed correctly
 
 3)
 As a child I want to be able to see a name on the screen
-•	 The name will also be colour and obvious so the child can belong to the game.
-•	 The score will be displayed on the top left part of the screen
+â€¢	 The name will also be colour and obvious so the child can belong to the game.
+â€¢	 The score will be displayed on the top left part of the screen
 Success: Name is displayed clearly and is correct
 Failure: Incorrect name is displayed. Name is displayed incorrectly
  
 4)	
 As a child I want to be able to see a Character on the screen
-•        The character must move from the middle of the screen towards the left hand side of the screen
-•        The rate at which the character moves is dependent on the time the student has to answer the question
-•        There should be an enemy NPC on the left side of the screen which indicates 0 seconds left i.e. when the character gets to the NPC it means no time left 
+â€¢        The character must move from the middle of the screen towards the left hand side of the screen
+â€¢        The rate at which the character moves is dependent on the time the student has to answer the question
+â€¢        There should be an enemy NPC on the left side of the screen which indicates 0 seconds left i.e. when the character gets to the NPC it means no time left 
 Success: Character is displayed correctly and moves in a normal manner.  
 Failure: Character is not visible. Character is not engaging. Character does not move in a normal manner
 
 5)
 As a child I want to be able to see the questions displayed clearly on the screen
-•	The questions will come across the screen from right to left 
-•	When it gets to the middle that’s when the question timer will start and the character will start moving will start	 
-Success: The questions rolls across the screen and stops in the middle. It’s displayed correctly also 
+â€¢	The questions will come across the screen from right to left 
+â€¢	When it gets to the middle thatâ€™s when the question timer will start and the character will start moving will start	 
+Success: The questions rolls across the screen and stops in the middle. Itâ€™s displayed correctly also 
 Failure: Not displayed clearly. 
 
 6)
 As a child I want to be able to see the numbers on the screen and be able to interact with them
-•	These numbers must be big and colourful and intractable
-•	The numbers will be 0-9 and a back button
+â€¢	These numbers must be big and colourful and intractable
+â€¢	The numbers will be 0-9 and a back button
 Success: Numbers displayed clearly and can be click on and intractable
 Failure: Clicking the numbers does nothing. Numbers too small or not displayed clear enough
 
 7)
 As a child I want to be able to answer the questions using the numbers displayed on screen
-•	If the answer requires one digit then a " _ " will be displayed and the user can enter a number and or delete a number using the back button.
-•	If the answer requires two digits then a " _ _ " will be displayed and the user can enter a number and or delete a number using the back button.
+â€¢	If the answer requires one digit then a " _ " will be displayed and the user can enter a number and or delete a number using the back button.
+â€¢	If the answer requires two digits then a " _ _ " will be displayed and the user can enter a number and or delete a number using the back button.
 Success: Number is pressed and is displayed in correct slot. If slots are filled it replaces it. Back button clears all. 
 Failure: Buttons not working correctly
 
 8)
 As a child when I answer the question correctly I want the game will recognize this reward me and move on
-•	There is no submit answer in this situation. Only correct answers can move the questions along
-•	The answer is only deemed incorrect when the timer runs out
-•	The character will move back to the middle of the screen when it answered correctly at the same time as the question is rolling in
-•	There is a cap of 20 questions that can be answered
+â€¢	There is no submit answer in this situation. Only correct answers can move the questions along
+â€¢	The answer is only deemed incorrect when the timer runs out
+â€¢	The character will move back to the middle of the screen when it answered correctly at the same time as the question is rolling in
+â€¢	There is a cap of 20 questions that can be answered
 Success: The game will know the answer is answered correctly and continue with the game
-Failure: Game doesn’t move on after question is answered. Doesn’t recognize the question has been answered correctly
+Failure: Game doesnâ€™t move on after question is answered. Doesnâ€™t recognize the question has been answered correctly
 
 9)
-As a child when I don’t answer the question in time I want the game to inform me of this and move on
-•	The user will lose health when not answered in time
-•	If there is no health remaining the game will finish
+As a child when I donâ€™t answer the question in time I want the game to inform me of this and move on
+â€¢	The user will lose health when not answered in time
+â€¢	If there is no health remaining the game will finish
 Success: Player loses a life and everything is synced up properly
-Failure: Game does not recognize wrong answers. Game doesn’t end. Game doesn’t start a new question
+Failure: Game does not recognize wrong answers. Game doesnâ€™t end. Game doesnâ€™t start a new question
 
 
 User Profile User Stories:
