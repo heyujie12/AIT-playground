@@ -1,54 +1,54 @@
-# This is initial version of the complete list of user stories. 
-# By Patrick Hall
-# on 13/10/2015
+# This is final version of the complete list of user stories. 
+# By Patrick Hall & Ronan Cassidy
+# on 15/10/2015
 
 User Stories:
 
 Health Scoring and Game Design User Stories:	1 - 9
-User Profile User Stories:			10 - 14
-Question Bank User Stories:			15 - 22
-Learning Rate User Stories:			23 - 25
-Feedback and Reporting User Stories:		26 - 28
+User Profile User Stories:			10 - 15
+Question Bank User Stories:			16 - 23
+Learning Rate User Stories:			24 - 26
+Feedback and Reporting User Stories:		27 - 29
 
 User Stories in Order of Suggested Priority:
 Priority	User Story
-1		10 As a teacher, I want to be able to create new user profiles for each student.
-2		11 As a teacher , I expect to be able to access a list of all the user profile information in the system.
-3		14 As a child, I want to be able to access my user profile information so that I can view my results.
-4		5 As a user I want to be able to see the questions displayed clearly on the screen
-5		3 As a user I want to be able to see a name on the screen
-6		1 As a user I want to be able to see a score displayed on the screen
-7		2 As a user I want to be able to see health/lives displayed on the screen
-8		4 As a user I want to be able to see a Character on the screen
-9		6 As a user I want to be able to see the numbers on the screen and be able to interact with them		
-10		7 As a user I want to be able to answer the questions using the numbers displayed on screen
-11		8 As a user when I answer the question correctly I want the game will recognize this reward me and move on
-12		9 As a user when I don’t answer the question in time I want the game to inform me of this and move on
-13		12 As a teacher, I want to be able to edit user profile information so that I may correct or update incorrect information in a user profile.
-14		13 As a parent, I want to be able to log in to the system to access my child's user profile information.
-15		23 As a child, I expect system to apply machine learning algorithms to increase and decrease difficulty level in game so that questions are "suitable" to my knowledge.
-16		24 As a child, I can view and sense the difficulty level in game.
-17		25 As a child, I shall feel challenged if difficulty level increases.
-18		26 As a teacher/parent I want to be able to get a report on a particular student so I can see his/her progress.
-19		27 As a teacher I want to be able to get a report on the entire class so I can see the class's progress.
-20		28 As a student I want to see a report on my results after using the app.
-21		15 As a teacher, I want the game to have different levels for different students, so that they can do proper exercise.
-22		16 As a teacher, I want to make sure the resources are reliable so that the system is useful and can be trusted.
-23		17 As a teacher, I want there to be a range of appropriate questions suitable for 8 to 11 year olds.
-24		18 As a teacher, I want the questions not to repeat often, so that students have to caculate every question.
-25		19 As a student, I want the game don't be too hard for my age, so that I don't lose interests.
-26		20 As a student, I want the game slowly improve difficulty, so that I can really improve my maths.
-27		21 As a student, I want the questions are closely related to my current studies
-28		22 As a parent, I want the questions not too hard for my child.
 
 
-
+	High
+		27 As a teacher/parent I want to be able to get a report on a particular student so I can see his/her progress.
+		10 As a teacher, I want to be able to create new user profiles for each student.		
+		5 As a child I want to be able to see the questions displayed clearly on the screen
+		4 As a child I want to be able to see a Character on the screen
+		6 As a child I want to be able to see the numbers on the screen and be able to interact with them		
+		7 As a child I want to be able to answer the questions using the numbers displayed on screen
+		8 As a child when I answer the question correctly I want the game will recognize this reward me and move on
+		9 As a child when I don’t answer the question in time I want the game to inform me of this and move on
+		24 As a child, I want system to apply machine learning algorithms to increase and decrease difficulty level in game so that questions are "suitable" to my knowledge.
+		 ^ 16 As a teacher, I want the game to have different levels for different students, so that they can do proper exercise.
+		 ^ 25 As a child, I can view and sense the difficulty level in game.
+		 ^ 26 As a child, I shall feel challenged if difficulty level increases.
+	Medium
+		15 As a parent, I want to be able view the my childs information.
+		14 As a parent, I want to be able to log in to the system to access my child's user profile information.
+		12 As a teacher, I want to be able to edit user profile information so that I may correct or update incorrect information in a user profile.
+		13 As a teacher, I want to be able to search for individual user profiles by drop-down box which specifies each class.
+		28 As a teacher I want to be able to get a report on the entire class so I can see the class's progress.
+		29 As a student I want to see a report on my results after using the app.
+		11 As a teacher , I want to be able to access a list of all the user profile information in the system.
+	
+	Low:
+		18 As a teacher, I want there to be a range of appropriate questions suitable for 8 to 11 year olds.
+		3 As a child I want to be able to see a name on the screen
+		1 As a child I want to be able to see a score displayed on the screen
+		2 As a child I want to be able to see health/lives displayed on the screen
+		
+		
 
 
 Health Scoring and Game Design User Stories:
 
 1)
-As a user I want to be able to see a score displayed on the screen
+As a child I want to be able to see a score displayed on the screen
 •        The score increases as questions are answered correctly, Score never decreases as the game is for children
 •        Score streaks can be obtained by getting multiple answers correct in a row which adds multiplier to the score
 •	 The score will be displayed on the top left part of the screen
@@ -56,7 +56,7 @@ Success: The score is displayed to the top of the screen near the middle left. S
 Failure: Score does not increase when question is answered correctly. Score is not displayed correctly
 
 2)
-As a user I want to be able to see health/lives displayed on the screen
+As a child I want to be able to see health/lives displayed on the screen
 • 	 The health indicates how many more answers they can get wrong before the game finishes   
 •    	 This will be displayed as hearts or something like this   
 •	 The health will be displayed on the top left part of the screen
@@ -64,14 +64,14 @@ Success: The health is displayed to the top of the screen near the middle right.
 Failure: Health does not decrease when question not answered. Health is not displayed correctly
 
 3)
-As a user I want to be able to see a name on the screen
+As a child I want to be able to see a name on the screen
 •	 The name will also be colour and obvious so the child can belong to the game.
 •	 The score will be displayed on the top left part of the screen
 Success: Name is displayed clearly and is correct
 Failure: Incorrect name is displayed. Name is displayed incorrectly
  
 4)	
-As a user I want to be able to see a Character on the screen
+As a child I want to be able to see a Character on the screen
 •        The character must move from the middle of the screen towards the left hand side of the screen
 •        The rate at which the character moves is dependent on the time the student has to answer the question
 •        There should be an enemy NPC on the left side of the screen which indicates 0 seconds left i.e. when the character gets to the NPC it means no time left 
@@ -79,28 +79,28 @@ Success: Character is displayed correctly and moves in a normal manner.
 Failure: Character is not visible. Character is not engaging. Character does not move in a normal manner
 
 5)
-As a user I want to be able to see the questions displayed clearly on the screen
+As a child I want to be able to see the questions displayed clearly on the screen
 •	The questions will come across the screen from right to left 
 •	When it gets to the middle that’s when the question timer will start and the character will start moving will start	 
 Success: The questions rolls across the screen and stops in the middle. It’s displayed correctly also 
 Failure: Not displayed clearly. 
 
 6)
-As a user I want to be able to see the numbers on the screen and be able to interact with them
+As a child I want to be able to see the numbers on the screen and be able to interact with them
 •	These numbers must be big and colourful and intractable
 •	The numbers will be 0-9 and a back button
 Success: Numbers displayed clearly and can be click on and intractable
 Failure: Clicking the numbers does nothing. Numbers too small or not displayed clear enough
 
 7)
-As a user I want to be able to answer the questions using the numbers displayed on screen
+As a child I want to be able to answer the questions using the numbers displayed on screen
 •	If the answer requires one digit then a " _ " will be displayed and the user can enter a number and or delete a number using the back button.
 •	If the answer requires two digits then a " _ _ " will be displayed and the user can enter a number and or delete a number using the back button.
 Success: Number is pressed and is displayed in correct slot. If slots are filled it replaces it. Back button clears all. 
 Failure: Buttons not working correctly
 
 8)
-As a user when I answer the question correctly I want the game will recognize this reward me and move on
+As a child when I answer the question correctly I want the game will recognize this reward me and move on
 •	There is no submit answer in this situation. Only correct answers can move the questions along
 •	The answer is only deemed incorrect when the timer runs out
 •	The character will move back to the middle of the screen when it answered correctly at the same time as the question is rolling in
@@ -109,7 +109,7 @@ Success: The game will know the answer is answered correctly and continue with t
 Failure: Game doesn’t move on after question is answered. Doesn’t recognize the question has been answered correctly
 
 9)
-As a user when I don’t answer the question in time I want the game to inform me of this and move on
+As a child when I don’t answer the question in time I want the game to inform me of this and move on
 •	The user will lose health when not answered in time
 •	If there is no health remaining the game will finish
 Success: Player loses a life and everything is synced up properly
@@ -126,7 +126,7 @@ Success: User profile successfully created.
 Failure: User profile not successfully created or created with information missing or incorrect. 
 
 11)
-As a teacher , I expect to be able to access a list of all the user profile information in the system.
+As a teacher , I want to be able to access a list of all the user profile information in the system.
 - I want to be able to view each child's individual information
 - I want to be able to view the child's current high score and learning history/score history to monitor progression.
 Success: All user profiles can be viewed
@@ -134,71 +134,53 @@ Failure: User profiles cannot be viewed or there is information missing or incor
 
 12)
 As a teacher, I want to be able to edit user profile information so that I may correct or update incorrect information in a user profile.
-As a teacher, I want to be able to search for individual user profiles by drop-down box which specifies each class.
+- I want to be able to edit the name , age , class and parent information attributes.
 Success: User profiles can be correctly edited.
 Failure: User profiles cannot be correctly edited.
 
 13)
+As a teacher, I want to be able to search for individual user profiles by drop-down box which specifies each class.
+- Teacher can view user profile information by class
+Success: Teacher can access information by class
+Failure: Teacher cannot view information by class.
+
+14)
 As a parent, I want to be able to log in to the system to access my child's user profile information.
-As a parent, I want to be able view the information.
+
 Success: Parent can log in and access the relevant user profile.
 Failure: Parent cannot log in or access the relevant user profile.
 
-14)
-As a child, I want to be able to access my user profile information so that I can view my results.
-As a child, I expect to be able to access my user profile so I can gain access to the maths game.
-Success: Child can access his/her user profile and view his/her results.
-Failure: Child cannot access his/her user profile or view his/her results.
+15)
+As a parent, I want to be able view the my childs information.
+- The parent can view the childs information
+
+Success: The parent can access the childs user profile.
+Failure: The parent cannot access the childs user profile.
 
 
 Question Bank User Stories:
 
-15)
+16)
 As a teacher, I want the game to have different levels for different students, so that they can do proper exercise.
+ - I want the game don't be too hard for my age, so that I don't lose interests
 Success: The game changes levels based on the ability of the student.
 Failure: The game does not respond to the student's ability.
 
-16)
-As a teacher, I want to make sure the resources are reliable so that the system is useful and can be trusted.
-Success: The system grades the students fairly.
-Failure: The system does not grade the students fairly.
-
-17)
-As a teacher, I want there to be a range of appropriate questions suitable for 8 to 11 year olds.
-Success: The questions asked are suitable for 8 to 11 year olds.
-Failure: The questions are not suitable for 8 to 11 year olds.
-
 18)
-As a teacher, I want the questions not to repeat often, so that students have to caculate every question.
-Success: The system will present a random set of questions initially and use machine learning to select questions appropriate to the child's knowledge and ability.
-Failure: The system does not adjust the questions to adequately test the child's knowledge or ability.
-
-19)
-As a student, I want the game don't be too hard for my age, so that I don't lose interests.
-Success: Students don't find the game too hard.
-Failure: Students find the game too hard.
-
-20)
-As a student, I want the game slowly improve difficulty, so that I can really improve my maths.
-Success: Appropriate changes in difficulty level.
-Failure: Inappropriate changes in difficulty level.
-
-21)
-As a student, I want the questions are closely related to my current studies
+As a teacher, I want there to be a range of appropriate questions suitable for 8 to 11 year olds.
+ - I want to make sure the resources are reliable so that the system is useful and can be trusted
+ - I want the questions not to repeat often, so that students have to caculate every question
+ - I want the game slowly improve difficulty, so that I can really improve my maths
+ - I want the questions not too hard for my child
 Success: The questions asked are suitable for 8 to 11 year olds.
 Failure: The questions are not suitable for 8 to 11 year olds.
 
-22)
-As a parent, I want the questions not too hard for my child.
-             I want the questions not too simple for my child.
-Success: The questions asked are suitable for 8 to 11 year olds.
-Failure: The questions are not suitable for 8 to 11 year olds.
 
 
 Learning Rate User Stories:
 
-23)
-1. As a child, I expect system to apply machine learning algorithms to increase and decrease difficulty level in game so that questions are "suitable" to my knowledge. Definition of suitable is as follows
+24)
+1. As a child, I want system to apply machine learning algorithms to increase and decrease difficulty level in game so that questions are "suitable" to my knowledge. Definition of suitable is as follows
 	1.1 increase difficulty level if I am capable of answering two questions within half of given time span
 	1.2 stay in the same difficulty level if I am capable of answering questions in ordinary pace
 	1.3 increase difficulty level if I am capable of answering five questions in a row
@@ -206,7 +188,7 @@ Learning Rate User Stories:
 Success: The difficulty levels increase, decrease or stay the same in accordance with the rules defined in 1.1. to 1.4
 Failure: The difficulty levels do not increase, decrease or stay the same in accordance with the rules defined in 1.1. to 1.4
 
-24)
+25)
 2. As a child, I can view and sense the difficult level in game.
 	2.1 character moves faster and sound becomes more intense when level increases. 
 	2.2 character moves slower and sound becomes softer when level decreases
@@ -214,7 +196,7 @@ Failure: The difficulty levels do not increase, decrease or stay the same in acc
 Success: The character moves faster/slower/at the same pace and the sound becomes more intense/less intense/ remains the same if the level increases/decreases/remains the same
 Failure: The character does not moves faster/slower/at the same pace and the sound does not become more intense/less intense/ remain the same if the level increases/decreases/remains the same
 
-25)
+26)
 3. As a child, I shall feel challenged if difficult level increases. Average response time and average accurate rate are means to measure
 	3.1 Response time shall fall in between 10% and 30% increase compared to the lower level
 	3.2 Accurate rate shall drop 5% up to 15% compared to the lower lever
@@ -224,8 +206,8 @@ Failure: The difficulty level does not correctly increase/decrease/remain the sa
 
 Feedback and Reporting User Stories:
 
-26)
-1) As a teacher/parent I want to be able to get a report on a particular student so I can see his/her progress.
+27)
+As a teacher/parent I want to be able to get a report on a particular student so I can see his/her progress.
  - The report should tell me if the student is getting faster overall at answering questions compared to previous results.
  - The report should tell me how fast the student answers questions on addition, subtraction, multiplication and division.
  - The report should tell me how fast the student is at addition, subtraction, multiplication and division compared to other students in the class. 
@@ -236,16 +218,16 @@ Success: The teacher/parent can access the report on the student and all the req
 Failure: The teacher/parent can't access the report or there is information missing or incorrect in the report.
 
 
-27)
-2) As a teacher I want to be able to get a report on the entire class so I can see the class's progress.
+28)
+As a teacher I want to be able to get a report on the entire class so I can see the class's progress.
  - I want the report to tell me if the class are getting faster or slower on average each time they use the app.
  - I want the report to rank the students from fastest to slowest and list their best and worst tables.
  - In this report I want the report to tell me what tables the class are fast at answering on average and what tables the class is slow at answering.
 Success: The teacher can access the report on the student and all the required information is there and is correct.
 Failure: The teacher can't access the report or there is information missing or incorrect in the report.
 
-28)
-3) As a student I want to see a report on my results after using the app.
+29)
+As a student I want to see a report on my results after using the app.
  - The report should show the student's overall progress compared to previous times on the app.
  - The app should list the tables the student is strong in.
  - The app should list the tables the student needs to improve upon.
