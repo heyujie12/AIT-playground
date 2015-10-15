@@ -15,18 +15,21 @@ Priority	User Story
 
 
 	High
-		27 As a teacher/parent I want to be able to get a report on a particular student so I can see his/her progress.
-		10 As a teacher, I want to be able to create new user profiles for each student.		
-		5 As a child I want to be able to see the questions displayed clearly on the screen
-		4 As a child I want to be able to see a Character on the screen
-		6 As a child I want to be able to see the numbers on the screen and be able to interact with them		
-		7 As a child I want to be able to answer the questions using the numbers displayed on screen
-		8 As a child when I answer the question correctly I want the game will recognize this reward me and move on
-		9 As a child when I don’t answer the question in time I want the game to inform me of this and move on
+	[5]	27 As a teacher/parent I want to be able to get a report on a particular student so I can see his/her progress.
+	[3]	10 As a teacher, I want to be able to create new user profiles for each student.		
+	[2]	5 As a child I want to be able to see the questions displayed clearly on the screen
+	[8]	4 As a child I want to be able to see a Character on the screen (Animation)
+	[2]	6 As a child I want to be able to see the numbers on the screen and be able to interact with them		
+	[1]	7 As a child I want to be able to answer the questions using the numbers displayed on screen
+	[3]	8 As a child when I answer the question correctly I want the game will recognize this reward me and move on
+	[2]	9 As a child when I don’t answer the question in time I want the game to inform me of this and move on
 		24 As a child, I want system to adapt based on my ability so that I can learn more appropriately.
-		 ^ 16 As a teacher, I want the game to have different levels for different students, so that they can do proper exercise.
-		 ^ 25 As a child, I can view and sense the difficulty level in game.
-		 ^ 26 As a child, I shall feel challenged if difficulty level increases.
+	[16]	 ^ 16 As a teacher, I want the game to have different levels for different students, so that they can do proper exercise.
+		[5]	16.1 construct question bank
+		[3]	16.2 scale question into levels
+		[5]	16.3 be capable of adjusting levels based on the performance history
+	[2]	 ^ 25 As a child, I can view and sense the difficulty level in game.
+	[1]	 ^ 26 As a child, I shall feel challenged if difficulty level increases.
 	Medium
 		15 As a parent, I want to be able view the my childs information.
 		14 As a parent, I want to be able to log in to the system to access my child's user profile information.
