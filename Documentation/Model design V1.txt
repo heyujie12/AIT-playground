@@ -1,0 +1,23 @@
+Teacher
+Name, Children, email, password
+
+
+Parent
+Name, children, email, password
+
+Child
+Name, Games, class
+
+Game
+QuestionInstances, Child, time(game taken time), score, Feedback
+
+QuestionInstance
+time, QuestionDefinition, [Game]
+
+QuestionDefinition
+question text (first value, second value, operator), difficulty level, category, QuestionInstances
+
+
+Feedback
+comment (avg performance), 
+
