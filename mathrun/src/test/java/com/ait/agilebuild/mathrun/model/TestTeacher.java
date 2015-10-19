@@ -5,9 +5,7 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-
-public class TeacherTest {
-
+public class TestTeacher {
 	@Test
 	public void testSingletonGetInstance() {
 		Teacher t = new Teacher();
