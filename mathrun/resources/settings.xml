@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- This is Maven settings.xml for the build. Place it in [User_Home]/.m2/ folder -->
 <!--
     JBoss, Home of Professional Open Source
     Copyright 2014, Red Hat, Inc. and/or its affiliates, and individual
