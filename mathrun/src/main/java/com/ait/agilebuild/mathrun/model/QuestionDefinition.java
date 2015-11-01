@@ -4,16 +4,16 @@ public class QuestionDefinition {
 	
 	private float first_value;
 	private float second_value;
-	private int operator;                                            //1->+, 2->-, 3->*, 4->/
+	private int operator;                                           //1->+, 2->-, 3->*, 4->/
 	private String difficulty_level;
 	private float correct_answer;
-	private int Remainder;                                           //only available for divisions
+	private int remainder;                                          //only available for divisions
 	
-	
-	private int attempt_times;                                            
+	                  
 	private float[] attempts;
+	private long[] attempt_duration;							    //time taken each attempt
 	
-	private int time;                                                //how long does kid spend on each question
+	private int time;                                               //how long does kid spend on each question
 	
 	
 	public float getCorrect_answer() {
@@ -47,11 +47,11 @@ public class QuestionDefinition {
 		this.difficulty_level = difficulty_level;
 	}
 	
-	public int getRemainder() {
-		return Remainder;
+	public int getremainder() {
+		return remainder;
 	}
-	public void setRemainder(int remainder) {
-		Remainder = remainder;
+	public void setremainder(int remainder) {
+		remainder = remainder;
 	}
 	
 }
