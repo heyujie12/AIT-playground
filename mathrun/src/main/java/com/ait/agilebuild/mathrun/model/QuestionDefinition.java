@@ -52,7 +52,7 @@ public class QuestionDefinition {
 		return remainder;
 	}
 	public void setRemainder(int remainder) {
-		remainder = remainder;
+		this.remainder = remainder;
 	}
 	
 	public float[] getAttempts() {
