@@ -11,6 +11,7 @@ public class QuestionDefinition {
 	
 	                  
 	private float[] attempts;
+	
 	private long[] attempt_duration;							    //time taken each attempt
 	
 	private int time;                                               //how long does kid spend on each question
@@ -47,11 +48,29 @@ public class QuestionDefinition {
 		this.difficulty_level = difficulty_level;
 	}
 	
-	public int getremainder() {
+	public int getRemainder() {
 		return remainder;
 	}
-	public void setremainder(int remainder) {
+	public void setRemainder(int remainder) {
 		remainder = remainder;
 	}
 	
+	public float[] getAttempts() {
+		return attempts;
+	}
+	public void setAttempts(float[] attempts) {
+		this.attempts = attempts;
+	}
+	public long[] getAttempt_duration() {
+		return attempt_duration;
+	}
+	public void setAttempt_duration(long[] attempt_duration) {
+		this.attempt_duration = attempt_duration;
+	}
+	public int getTime() {
+		return time;
+	}
+	public void setTime(int time) {
+		this.time = time;
+	}
 }
