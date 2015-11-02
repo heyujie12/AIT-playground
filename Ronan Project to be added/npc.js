@@ -15,6 +15,18 @@ function drawNPC(){
 	var npcFrameHeight = img.height;
 
 	requestAnimationFrame(drawNPC);
+	ctx.clearRect(fixedX-5,fixedY,npcFrameSize+15,npcFrameHeight);
+	ctx.drawImage(img,npcX,npcY,npcFrameSize,npcFrameHeight,fixedX,fixedY,npcFrameSize,npcFrameHeight);
+}
+function animateNPC(){
+
+	var ctx = document.getElementById('myCanvas').getContext('2d');
+	var img = new Image();
+	img.src = "images/enemy.png";
+	var npcFrameSize = img.width/npcWidthMax;
+	var npcFrameHeight = img.height;
+
+	requestAnimationFrame(animateNPC);
 	
 	ctx.clearRect(fixedX-5,fixedY,npcFrameSize+15,npcFrameHeight);
 	ctx.drawImage(img,npcX,npcY,npcFrameSize,npcFrameHeight,fixedX,fixedY,npcFrameSize,npcFrameHeight);
@@ -27,7 +39,7 @@ function drawNPC(){
 		npcX = npcX + npcFrameSize;
 
 }
-function resetAnimation()
+function resetNPCAnimation()
 {
 	npcX = 0;
 	npcY = 0;

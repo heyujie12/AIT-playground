@@ -2,7 +2,7 @@
   <head>
   	<link rel="stylesheet" type="text/css" href="background.css">
   </head>
-  <body onload="loop()">
+  <body onload="init()">
   	<canvas id="myCanvas" width="2000" height="375"></canvas>
 	<img name="num1" src="images/Number1.png" width="100" height="100" onclick="numClicked(1)"></img>
 	<img name="num2" src="images/Number2.png" width="100" height="100" onclick="numClicked(2)"></img>
@@ -14,6 +14,7 @@
 	<img name="num8" src="images/Number8.png" width="100" height="100" onclick="numClicked(8)"></img>
 	<img name="num9" src="images/Number9.png" width="100" height="100" onclick="numClicked(9)"></img>
 	<img name="num0" src="images/Number0.png" width="100" height="100" onclick="numClicked(0)"></img>
+	<img name="num0" src="images/Start.png" width="100" height="100" onclick="loop()"></img>
 	<script src="charachter.js"></script>
   	<script src="gameloop.js"></script>
     <script src="numbers.js"></script>
