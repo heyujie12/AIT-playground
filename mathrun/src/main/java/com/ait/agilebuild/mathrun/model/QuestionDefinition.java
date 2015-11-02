@@ -5,7 +5,7 @@ public class QuestionDefinition {
 	private float first_value;
 	private float second_value;
 	private int operator;                                           //1->+, 2->-, 3->*, 4->/
-	private String difficulty_level;
+	private int difficulty_level;
 	private float correct_answer;
 	private int remainder;                                          //only available for divisions
 	
@@ -41,10 +41,10 @@ public class QuestionDefinition {
 	public void setOperator(int operator) {
 		this.operator = operator;
 	}
-	public String getDifficulty_level() {
+	public int getDifficulty_level() {
 		return difficulty_level;
 	}
-	public void setDifficulty_level(String difficulty_level) {
+	public void setDifficulty_level(int difficulty_level) {
 		this.difficulty_level = difficulty_level;
 	}
 	
