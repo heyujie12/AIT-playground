@@ -1,5 +1,5 @@
 var ctx = document.getElementById('myCanvas').getContext('2d');
-var qAnswer = 12;
+var qAnswer = 8;
 var text = 0;
 var lastText = null;
 
@@ -8,44 +8,53 @@ function numClicked(input)
 {
 	//console.log(text);
 	text = input;
- 	//console.log(input);
-	
+	if(input == -1)
+		console.log("cunt fuck");
 	//has 2 digits
-	if(qAnswer >= 10){
-		//do stuff with strings & take two strings
-		ctx.clearRect(145,20,400,250);
-		ctx.font="30px Georgia";
-		var answerText = "";
-		if(lastText != null)
-			answerText = "" + lastText +text;
-		else
-			answerText = text;
+	if(input != -1)
+	{
+		if(qAnswer >= 10){
+			//do stuff with strings & take two strings
+			ctx.clearRect(145,20,400,250);
+			ctx.font="30px Georgia";
+			var answerText = "";
+			if(lastText != null)
+				answerText = "" + lastText +text;
+			else
+				answerText = text;
 
-		console.log(answerText);
-		ctx.fillText(answerText,150,50);
-		var combineAnswer = Number(answerText);
-		//console.log(combineAnswer);
-		if(answerText == qAnswer)
+			console.log(answerText);
+			ctx.fillText(answerText,150,50);
+			var combineAnswer = Number(answerText);
+			//console.log(combineAnswer);
+			if(answerText == qAnswer)
+			{
+				ctx.clearRect(145,20,400,250);
+				ctx.fillText(answerText + " is the correct answer",150,50);
+				console.log("Fair Play");
+				loop();
+			}
+		}
+		//has 1 digit
+		else if (qAnswer < 10)
 		{
 			ctx.clearRect(145,20,400,250);
-			ctx.fillText(answerText + " is the correct answer",150,50);
-			console.log("Fair Play");
-			loop();
+			ctx.font="30px Georgia";
+			ctx.fillText(input,150,50);
+			if (input == qAnswer)
+			{
+				ctx.clearRect(145,20,400,250);
+				ctx.fillText(input + " is the correct answer",150,50);
+				loop();
+			}
 		}
+		lastText = input;
 	}
-	//has 1 digit
-	else if (qAnswer < 10)
+	else if(input == -1)
 	{
 		ctx.clearRect(145,20,400,250);
 		ctx.font="30px Georgia";
-		ctx.fillText(input,150,50);
-		if (input == qAnswer)
-		{
-			ctx.clearRect(145,20,400,250);
-			ctx.fillText(input + " is the correct answer",150,50);
-			loop();
-		}
+		ctx.fillText(" ",150,50);
+		lastText = 0;
 	}
-
-	lastText = input;
 }

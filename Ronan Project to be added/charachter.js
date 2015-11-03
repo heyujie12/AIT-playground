@@ -30,7 +30,6 @@ function animateCharachter(){
 	
 	
 	requestAnimationFrame(animateCharachter);
-	count ++;
 	ctx.clearRect(100,placeY,frameSize+500,frameHeight);
 	ctx.drawImage(img,charX,charY,frameSize,frameHeight,placeX,placeY,frameSize,frameHeight);
 	//animation loop
@@ -54,7 +53,6 @@ function animateCharachter(){
 		ctx.clearRect(placeX-5,placeY,frameSize+15,frameHeight);
 		resetPlayerPosition();
 	}
-	console.log(count);
 }
 function resetPlayerAnimation()
 {

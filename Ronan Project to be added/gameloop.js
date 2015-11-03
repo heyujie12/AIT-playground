@@ -8,8 +8,8 @@ function loop(){
 	var qArray = ['multiply','divide','add','sub'];
 	var qType = qArray[Math.floor(Math.random() * qArray.length)];
 	var timeForQuestion = 10;
-	composeQuestion(firstNumber,secondNumber,qType);
 	
+	composeQuestion(firstNumber,secondNumber,qType);
 	resetPlayerPosition();
 	animateCharachter();
 	animateNPC();
