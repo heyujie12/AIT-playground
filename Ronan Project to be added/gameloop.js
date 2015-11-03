@@ -9,6 +9,8 @@ function loop(){
 	var qType = qArray[Math.floor(Math.random() * qArray.length)];
 	var timeForQuestion = 10;
 	
+	stopPlayerAnimation();
+	stopNPCAnimation();
 	composeQuestion(firstNumber,secondNumber,qType);
 	resetPlayerPosition();
 	animateCharachter();

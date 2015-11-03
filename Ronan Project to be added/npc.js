@@ -5,7 +5,8 @@ var fixedY = 275;
 var begin = true;
 var npcX = 0;
 var npcY = 0;
-	
+var npcReq;
+
 function drawNPC(){
 
 	var ctx = document.getElementById('myCanvas').getContext('2d');
@@ -26,7 +27,7 @@ function animateNPC(){
 	var npcFrameSize = img.width/npcWidthMax;
 	var npcFrameHeight = img.height;
 
-	requestAnimationFrame(animateNPC);
+	npcReq = requestAnimationFrame(animateNPC);
 	
 	ctx.clearRect(fixedX-5,fixedY,npcFrameSize+15,npcFrameHeight);
 	ctx.drawImage(img,npcX,npcY,npcFrameSize,npcFrameHeight,fixedX,fixedY,npcFrameSize,npcFrameHeight);
@@ -38,6 +39,9 @@ function animateNPC(){
 	else
 		npcX = npcX + npcFrameSize;
 
+}
+function stopNPCAnimation(){
+	window.cancelAnimationFrame(npcReq);
 }
 function resetNPCAnimation()
 {
