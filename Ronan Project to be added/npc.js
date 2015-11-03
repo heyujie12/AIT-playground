@@ -1,7 +1,7 @@
-var npcWidthMax = 4;
+var npcWidthMax = 7;
 var npcHeightMax = 1;
 var fixedX = 0;
-var fixedY = 275;
+var fixedY = 395;
 var begin = true;
 var npcX = 0;
 var npcY = 0;
@@ -11,7 +11,7 @@ function drawNPC(){
 
 	var ctx = document.getElementById('myCanvas').getContext('2d');
 	var img = new Image();
-	img.src = "images/enemy.png";
+	img.src = "images/enemy2.png";
 	var npcFrameSize = img.width/npcWidthMax;
 	var npcFrameHeight = img.height;
 
@@ -23,17 +23,17 @@ function animateNPC(){
 
 	var ctx = document.getElementById('myCanvas').getContext('2d');
 	var img = new Image();
-	img.src = "images/enemy.png";
+	img.src = "images/enemy2.png";
 	var npcFrameSize = img.width/npcWidthMax;
 	var npcFrameHeight = img.height;
 
 	npcReq = requestAnimationFrame(animateNPC);
-	
+
 	ctx.clearRect(fixedX-5,fixedY,npcFrameSize+15,npcFrameHeight);
 	ctx.drawImage(img,npcX,npcY,npcFrameSize,npcFrameHeight,fixedX,fixedY,npcFrameSize,npcFrameHeight);
-	
+
 	if(npcX + npcFrameSize >= img.width)
-	{	
+	{
 		npcX = 0;
 	}
 	else

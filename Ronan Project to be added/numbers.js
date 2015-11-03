@@ -6,10 +6,8 @@ var lastText = null;
 //number is clicked and drawn also has fuctionality for determining if it is 2 digits or not
 function numClicked(input)
 {
-	//console.log(text);
 	text = input;
-	if(input == -1)
-		console.log("cunt fuck");
+
 	//has 2 digits
 	if(input != -1)
 	{

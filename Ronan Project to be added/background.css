@@ -16,14 +16,14 @@
   }
 
 body{  
-    width: 1250px; 
+    width: 1650px; 
     height: 500px; 
-    background-image: url("images/background1.png");
+    background-image: url("images/trees.png");
     background-position: 0px 0px;
     background-repeat: repeat-x;
 
-    animation: animatedBackground 40s linear infinite;
-    -ms-animation: animatedBackground 40s linear infinite;
-    -moz-animation: animatedBackground 60s linear infinite;
-    -webkit-animation: animatedBackground 40s linear infinite;
+    animation: animatedBackground 10s linear infinite;
+    -ms-animation: animatedBackground 10s linear infinite;
+    -moz-animation: animatedBackground 10s linear infinite;
+    -webkit-animation: animatedBackground 10s linear infinite;
   }
