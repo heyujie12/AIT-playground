@@ -21,6 +21,7 @@ public class generate3rdAdvanced {
 				if(temp_firstValueA + temp_secondValueA<=1000){
 					Qd.setFirst_value(temp_firstValueA);
 					Qd.setSecond_value(temp_secondValueA);
+					Qd.setOperatorCh("+");
 					Qd.setCorrect_answer(temp_firstValueA + temp_secondValueA);
 					return Qd;
 				}else{
@@ -31,6 +32,7 @@ public class generate3rdAdvanced {
 				if(temp_firstValueB - temp_secondValueB>0){
 					Qd.setFirst_value(temp_firstValueB);
 					Qd.setSecond_value(temp_secondValueB);
+					Qd.setOperatorCh("-");
 					Qd.setCorrect_answer(temp_firstValueB + temp_secondValueB);
 					return Qd;
 				}else{
@@ -40,6 +42,7 @@ public class generate3rdAdvanced {
 			case 3: {
 					Qd.setFirst_value(temp_firstValueC);
 					Qd.setSecond_value(temp_secondValueC);
+					Qd.setOperatorCh("*");
 					Qd.setCorrect_answer(temp_firstValueC * temp_secondValueC);
 					return Qd;
 			}

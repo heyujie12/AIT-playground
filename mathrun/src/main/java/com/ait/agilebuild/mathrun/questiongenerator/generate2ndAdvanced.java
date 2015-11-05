@@ -18,6 +18,7 @@ public class generate2ndAdvanced {
 			case 1:{
 				if(temp_firstValueA + temp_secondValueA<=200){
 					Qd.setFirst_value(temp_firstValueA);
+					Qd.setOperatorCh("+");
 					Qd.setSecond_value(temp_secondValueA);
 					Qd.setCorrect_answer(temp_firstValueA + temp_secondValueA);
 					return Qd;
@@ -28,6 +29,7 @@ public class generate2ndAdvanced {
 			case 2:{
 				if(temp_firstValueA - temp_secondValueA>0){
 					Qd.setFirst_value(temp_firstValueA);
+					Qd.setOperatorCh("-");
 					Qd.setSecond_value(temp_secondValueA);
 					Qd.setCorrect_answer(temp_firstValueA - temp_secondValueA);
 					return Qd;
@@ -38,6 +40,7 @@ public class generate2ndAdvanced {
 			case 3:{
 					Qd.setFirst_value(temp_firstValueB);
 					Qd.setSecond_value(temp_secondValueB);
+					Qd.setOperatorCh("*");
 					Qd.setCorrect_answer(temp_firstValueB * temp_secondValueB);
 					return Qd;
 			}

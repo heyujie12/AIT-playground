@@ -18,6 +18,7 @@ public class generate3rdBeginner {
 					if(temp_firstValueA + temp_secondValueA<=300){
 						Qd.setFirst_value(temp_firstValueA);
 						Qd.setSecond_value(temp_secondValueA);
+						Qd.setOperatorCh("+");
 						Qd.setCorrect_answer(temp_firstValueA + temp_secondValueA);
 						return Qd;
 					}else{
@@ -28,6 +29,7 @@ public class generate3rdBeginner {
 					if(temp_firstValueB - temp_secondValueB>0){
 						Qd.setFirst_value(temp_firstValueB);
 						Qd.setSecond_value(temp_secondValueB);
+						Qd.setOperatorCh("-");
 						Qd.setCorrect_answer(temp_firstValueB + temp_secondValueB);
 						return Qd;
 					}else{

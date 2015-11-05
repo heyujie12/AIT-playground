@@ -22,6 +22,7 @@ public class generate4thAdvanced {
 			if(temp_firstValueA/100 + temp_secondValueA/100 <=10){
 				Qd.setFirst_value(temp_firstValueA/100);
 				Qd.setSecond_value(temp_secondValueA/100);
+				Qd.setOperatorCh("+");
 				Qd.setCorrect_answer(temp_firstValueA/100 + temp_secondValueA/100);
 				return Qd;
 			}else{
@@ -32,6 +33,7 @@ public class generate4thAdvanced {
 			if(temp_firstValueB - temp_secondValueB>0){
 				Qd.setFirst_value(temp_firstValueB);
 				Qd.setSecond_value(temp_secondValueB);
+				Qd.setOperatorCh("-");
 				Qd.setCorrect_answer(temp_firstValueB + temp_secondValueB);
 				return Qd;
 			}else{
@@ -41,12 +43,14 @@ public class generate4thAdvanced {
 		case 3: {
 				Qd.setFirst_value(temp_firstValueC);
 				Qd.setSecond_value(temp_secondValueC);
+				Qd.setOperatorCh("*");
 				Qd.setCorrect_answer(temp_firstValueC * temp_secondValueC);
 				return Qd;
 		}
 		case 4:{
 				Qd.setFirst_value(temp_firstValueD);
 				Qd.setSecond_value(temp_secondValueD);
+				Qd.setOperatorCh("÷");
 				Qd.setCorrect_answer(temp_firstValueD / temp_secondValueD);
 				Qd.setRemainder(temp_firstValueD% temp_secondValueD);
 				return Qd;

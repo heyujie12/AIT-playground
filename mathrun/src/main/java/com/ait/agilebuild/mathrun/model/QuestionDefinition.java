@@ -5,6 +5,7 @@ public class QuestionDefinition {
 	private float first_value;
 	private float second_value;
 	private int operator;                                           //1->+, 2->-, 3->*, 4->/
+	private String operatorCh;
 	private String difficulty_level;
 	private float correct_answer;
 	private int remainder;                                          //only available for divisions
@@ -72,5 +73,11 @@ public class QuestionDefinition {
 	}
 	public void setTime(int time) {
 		this.time = time;
+	}
+	public String getOperatorCh() {
+		return operatorCh;
+	}
+	public void setOperatorCh(String operatorCh) {
+		this.operatorCh = operatorCh;
 	}
 }
