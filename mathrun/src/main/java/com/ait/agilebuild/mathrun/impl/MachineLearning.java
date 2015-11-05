@@ -1,15 +1,20 @@
 package com.ait.agilebuild.mathrun.impl;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.ait.agilebuild.mathrun.api.IMachineLearning;
 import com.ait.agilebuild.mathrun.api.IQuestionsGenerator;
+import com.ait.agilebuild.mathrun.model.Distribution;
 import com.ait.agilebuild.mathrun.model.Progression;
 import com.ait.agilebuild.mathrun.model.QuestionDefinition;
 
+@Stateless
 public class MachineLearning implements IMachineLearning{
 	private static final long QUESTION_TIME_SPAN = 8000;
 	@Inject
@@ -92,5 +97,30 @@ public class MachineLearning implements IMachineLearning{
 		}
 		return 0;
 	}
+
+	@Override
+	public Map<Integer, Distribution> generateFirstResponseDistribution(
+			List<QuestionDefinition> list) {
+		Map<Integer, Distribution> resultMap = new HashMap<>();
+		if(list == null || list.size() == 0){
+			return resultMap;
+		}
+		return null;
+	}
+
+	@Override
+	public Map<Integer, Distribution> generateFirstFaultResponseDistribution(
+			List<QuestionDefinition> list) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Map<Integer, Distribution> generateFirstAttemptOnAdjacentKeys(
+			List<QuestionDefinition> list) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

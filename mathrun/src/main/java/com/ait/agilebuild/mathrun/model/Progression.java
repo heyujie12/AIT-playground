@@ -1,10 +1,15 @@
 package com.ait.agilebuild.mathrun.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Progression<T> {
 	
 	private List<T> progression;
+
+	public Progression(List<T> list) {
+		this.progression = list;
+	}
 
 	public List<T> getProgression() {
 		return progression;
