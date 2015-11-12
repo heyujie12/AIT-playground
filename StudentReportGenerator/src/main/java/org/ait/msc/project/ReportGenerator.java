@@ -14,6 +14,9 @@ import com.itextpdf.text.pdf.PdfWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class ReportGenerator {
 	
@@ -32,7 +35,9 @@ public class ReportGenerator {
 		Rectangle rect = new Rectangle(PageSize.LETTER);
 		document.setPageSize(rect);
 		try {
-			String pathname = "StudentReport.pdf";
+			DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+			Calendar calendar = Calendar.getInstance();
+			String pathname = "C:\\Users\\Patrick Hall\\StudentReport"+studentName+ df.format(calendar.getTime()) + ".pdf";
 			File file = new File(pathname);
 			PdfWriter.getInstance(document, new FileOutputStream(file));
 			document.open();

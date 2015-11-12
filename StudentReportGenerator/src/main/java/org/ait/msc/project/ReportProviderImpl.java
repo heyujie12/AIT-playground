@@ -12,7 +12,7 @@ public class ReportProviderImpl implements ReportProvider {
 	
 	public static void main(String[] args){
 		ReportProviderImpl reportProviderImpl =  new ReportProviderImpl();
-		reportProviderImpl.generateReport("pat_1");
+		reportProviderImpl.generateReport("mary");
 	}
 
 }
