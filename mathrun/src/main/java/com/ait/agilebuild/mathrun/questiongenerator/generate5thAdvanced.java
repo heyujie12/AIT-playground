@@ -30,7 +30,7 @@ public class generate5thAdvanced {
 						Qd.setFirst_value(temp_firstValueB);
 						Qd.setSecond_value(temp_secondValueB);
 						Qd.setOperatorCh("-");
-						Qd.setCorrect_answer(temp_firstValueB + temp_secondValueB);
+						Qd.setCorrect_answer(temp_firstValueB - temp_secondValueB);
 						return Qd;
 					}else{
 						return getQ();

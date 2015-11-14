@@ -13,7 +13,7 @@ public class TestQuestionGenerator {
 	public void testGenratorDiff_1(){
 		QuestionsGenerator QG = new QuestionsGenerator();
 		QuestionDefinition QD = new QuestionDefinition();
-		QD = QG.getQuestion(1);
+		QD = QG.getQuestion(5);
 		assertNotNull(QD);
 		System.out.println(QD.getFirst_value()+" "+QD.getOperatorCh()+" "+QD.getSecond_value()+" = "+QD.getCorrect_answer() );
 	}
