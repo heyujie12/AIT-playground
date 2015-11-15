@@ -30,14 +30,14 @@ public class ReportGenerator {
 		String divisionProficiency = studentReport.getDivisionProficiency();
 		String strongTables = studentReport.getStrongTables();
 		String weakTables = studentReport.getWeakTables();
-		
+		String studentClass = studentReport.getStudentClass();
 		Document document = new Document();
 		Rectangle rect = new Rectangle(PageSize.LETTER);
 		document.setPageSize(rect);
 		try {
 			DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
 			Calendar calendar = Calendar.getInstance();
-			String pathname = "C:\\Users\\Patrick Hall\\StudentReport"+studentName+ df.format(calendar.getTime()) + ".pdf";
+			String pathname = "C:\\Users\\Ronan\\Report"+studentName+ df.format(calendar.getTime()) + ".pdf";
 			File file = new File(pathname);
 			PdfWriter.getInstance(document, new FileOutputStream(file));
 			document.open();
@@ -46,6 +46,7 @@ public class ReportGenerator {
 			paragraphHeading.setAlignment(Element.ALIGN_CENTER);
 			paragraphHeading.add("Student: " + studentName + "\n");
 			paragraphHeading.add("Parent: " + parentName);
+			paragraphHeading.add("Class: " + studentClass);
 			document.add(paragraphHeading);
 			paragraphResults.setAlignment(Element.ALIGN_LEFT);
 			paragraphResults.add("Overall Progress:" + overallProgress + "\n");

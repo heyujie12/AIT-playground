@@ -11,6 +11,7 @@ public class StudentReport {
 	String divisionProficiency;
 	String strongTables;
 	String weakTables;
+	String studentClass;
 	
 	public String getStudentName() {
 		return studentName;
@@ -65,6 +66,12 @@ public class StudentReport {
 	}
 	public void setWeakTables(String weakTables) {
 		this.weakTables = weakTables;
+	}
+	public String getStudentClass() {
+		return studentClass;
+	}
+	public void setStudentClass(String studentClass) {
+		this.studentClass = studentClass;
 	}
 	
 }

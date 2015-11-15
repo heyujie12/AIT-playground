@@ -23,7 +23,7 @@ public class ReportDatatbaseHandler {
 			System.out.println("Creating statement...");
 			stmt = conn.createStatement();
 			String sql;
-			sql = "SELECT * FROM studentrecord WHERE studentrecord.STUDENT_ID='"+name+"'";
+			sql = "SELECT * FROM studentrecord WHERE studentrecord.CLASS='"+name+"'";
 			ResultSet rs = stmt.executeQuery(sql);
 
 			while (rs.next()) {
@@ -36,7 +36,7 @@ public class ReportDatatbaseHandler {
 				String divisionProficiency = rs.getString("PROGRESS_DIVISION");
 				String strongTables = rs.getString("STRONG_TABLES");
 				String weakTables = rs.getString("WEAK_TABLES");
-
+				String studentClass = rs.getString("CLASS");
 				// Display values
 				System.out.print("STUDENT_ID: " + studentName);
 				studentReport.setStudentName(studentName);
@@ -56,6 +56,8 @@ public class ReportDatatbaseHandler {
 				studentReport.setStrongTables(strongTables);
 				System.out.print("WEAK_TABLES: " + weakTables);
 				studentReport.setWeakTables(weakTables);
+				System.out.print("CLASS: " + studentClass);
+				studentReport.setStudentClass(studentClass);
 
 			}
 			// STEP 6: Clean-up environment
