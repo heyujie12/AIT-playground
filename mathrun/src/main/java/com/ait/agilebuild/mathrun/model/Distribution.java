@@ -90,8 +90,8 @@ public class Distribution {
 	}
 
 	/**
-	 * The calculation is done here. Example: From 1.96 (Z-score) to 0.95 %
-	 * (P-value) From -1.96 (Z-score) to -0.95%
+	 * The calculation is done here. Example: From 1.96 (Z-score) to 0.975
+	 * (P-value) From -1.96 (Z-score) to 0.025
 	 *
 	 * @return double a p value
 	 */
@@ -105,5 +105,5 @@ public class Distribution {
         }
         return lQuantile;
 	}
-	
+
 }
