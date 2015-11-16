@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -91,29 +92,93 @@ public class MachineLearning implements IMachineLearning{
 		}
 		return 0;
 	}
+	
+	private void checkListValidity(List<?> list){
+		if(list == null || list.size() == 0){
+			throw new IllegalArgumentException("Null list or empty list is invalid input");
+		}
+	}
+
+	private Map<Integer, List<QuestionDefinition>> getClassification(List<QuestionDefinition> list) {
+		checkListValidity(list);
+		Map<Integer, List<QuestionDefinition>> classification = new HashMap<>();
+		for(QuestionDefinition q : list){
+			final int qLevel = q.getDifficulty_level();
+			if(classification.get(qLevel) == null){
+				classification.put(qLevel, new ArrayList<QuestionDefinition>());
+			}
+			classification.get(qLevel).add(q);
+		}
+		return classification;
+	}
 
 	@Override
 	public Map<Integer, Distribution> generateFirstResponseDistribution(
 			List<QuestionDefinition> list) {
+		Map<Integer, List<QuestionDefinition>> classification = getClassification(list);
 		Map<Integer, Distribution> resultMap = new HashMap<>();
-		if(list == null || list.size() == 0){
-			return resultMap;
+		
+		for(Entry<Integer, List<QuestionDefinition>> entry : classification.entrySet()){
+			List<QuestionDefinition> questionSet = entry.getValue();
+			List<Integer> values = new ArrayList<>();
+			for(QuestionDefinition q : questionSet){
+				if(q.getAttempt_duration().length > 0){
+					values.add(q.getAttempt_duration()[0]);
+				}
+			}
+			Distribution d = new Distribution(values);
+			resultMap.put(entry.getKey(), d);
 		}
-		return null;
+		return resultMap;
 	}
 
 	@Override
 	public Map<Integer, Distribution> generateFirstFaultResponseDistribution(
 			List<QuestionDefinition> list) {
-		// TODO Auto-generated method stub
-		return null;
+		Map<Integer, List<QuestionDefinition>> classification = getClassification(list);
+		Map<Integer, Distribution> resultMap = new HashMap<>();
+		
+		for(Entry<Integer, List<QuestionDefinition>> entry : classification.entrySet()){
+			List<QuestionDefinition> questionSet = entry.getValue();
+			List<Integer> values = new ArrayList<>();
+			for(QuestionDefinition q : questionSet){
+				// attempts greater than 1 means first is incorrect attempt 
+				if(q.getAttempts().length > 1 && q.getAttempt_duration().length > 0){
+					values.add(q.getAttempt_duration()[0]);
+				}
+			}
+			Distribution d = new Distribution(values);
+			resultMap.put(entry.getKey(), d);
+		}
+		return resultMap;
+	}
+	
+	private boolean isAdjacentKey(double answer, double attempt){
+		return Math.abs(answer - attempt) == 1 ||
+				Math.abs(answer - attempt) == 10;
 	}
 
 	@Override
 	public Map<Integer, Distribution> generateFirstAttemptOnAdjacentKeys(
 			List<QuestionDefinition> list) {
-		// TODO Auto-generated method stub
-		return null;
+		Map<Integer, List<QuestionDefinition>> classification = getClassification(list);
+		Map<Integer, Distribution> resultMap = new HashMap<>();
+		
+		for(Entry<Integer, List<QuestionDefinition>> entry : classification.entrySet()){
+			List<QuestionDefinition> questionSet = entry.getValue();
+			List<Integer> values = new ArrayList<>();
+			for(QuestionDefinition q : questionSet){
+				// attempts greater than 1 means first is incorrect attempt 
+				if(q.getAttempts().length > 1
+						&& isAdjacentKey(q.getAttempts()[0], q.getCorrect_answer())
+						&& q.getAttempt_duration().length > 0){
+					values.add(q.getAttempt_duration()[0]);
+				}
+			}
+			Distribution d = new Distribution(values);
+			resultMap.put(entry.getKey(), d);
+		}
+		return resultMap;
 	}
 
 
