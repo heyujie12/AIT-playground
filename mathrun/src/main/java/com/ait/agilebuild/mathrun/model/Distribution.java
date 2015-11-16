@@ -72,13 +72,13 @@ public class Distribution {
 	 * actual data from the average. The Z value provides an assessment of how
 	 * off-target a process is operating.
 	 * <p>
-	 * Formula: <b>z = (n - μ) / σ</b>
+	 * Formula: <b>z = (n - m) / std</b>
 	 * </p>
 	 * <p>
 	 * where:
 	 * </p>
 	 * <p>
-	 * μ is the mean of the population; σ is the standard deviation of the
+	 * m is the mean of the population; std is the standard deviation of the
 	 * population.
 	 * </p>
 	 * 
@@ -91,8 +91,8 @@ public class Distribution {
 	}
 
 	/**
-	 * The calculation is done here. Example: From 1.96 (Z-score) to 0.95 %
-	 * (P-value) From -1.96 (Z-score) to -0.95%
+	 * The calculation is done here. Example: From 1.96 (Z-score) to 0.975
+	 * (P-value) From -1.96 (Z-score) to 0.025
 	 *
 	 * @return double a p value
 	 */
@@ -106,5 +106,5 @@ public class Distribution {
         }
         return lQuantile;
 	}
-	
+
 }
