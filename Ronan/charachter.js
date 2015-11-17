@@ -52,6 +52,7 @@ function animateCharachter(){
 	{
 		ctx.clearRect(placeX-5,placeY,frameSize+15,frameHeight);
 		resetPlayerPosition();
+		updateLives(-1);
 		loop();
 	}
 }

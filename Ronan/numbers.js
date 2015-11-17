@@ -8,7 +8,7 @@ function numClicked(input)
 {
 	text = input;
 	qAnswer = getAnswer();
-	
+
 	if(input != -1)
 	{
 		//has 1 digit
@@ -21,6 +21,7 @@ function numClicked(input)
 			{
 				ctx.clearRect(145,20,750,250);
 				ctx.fillText(input + " is the correct answer",450,50);
+				updateScore(5);
 				loop();
 			}
 		}
@@ -44,6 +45,7 @@ function numClicked(input)
 				ctx.clearRect(145,20,750,250);
 				ctx.fillText(answerText + " is the correct answer",450,50);
 				console.log("Fair Play");
+				updateScore(5);
 				lastText = 0;
 				text = 0;
 				loop();
@@ -51,7 +53,7 @@ function numClicked(input)
 			else
 				lastText = input;
 		}
-		
+
 		//3 digits
 		else if (qAnswer >= 100)
 		{
@@ -74,6 +76,7 @@ function numClicked(input)
 				ctx.clearRect(145,20,750,250);
 				ctx.fillText(answerText + " is the correct answer",450,50);
 				console.log("Fair Play");
+				updateScore(5);
 				text = 0;
 				lastText = 0;
 				lastLastText = 0;
@@ -83,12 +86,12 @@ function numClicked(input)
 			{
 				lastLastText = lastText;
 				lastText = input;
-			}	
-			
+			}
+
 		}
 		//decimal
 		//else if (qAnswer % 1 !=0) {};
-		
+
 	}
 	else if(input == -1)
 	{

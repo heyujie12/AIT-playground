@@ -30,7 +30,7 @@ function composeQuestion(){
 		questionText = number1 + " - " + number2 + " = ";
 	//else if(type == "complex")
 		//add code here
-	
+
 	setAnswer();
 	ctx.clearRect(20,20,125,150);
 	ctx.font="30px Georgia";
@@ -39,7 +39,7 @@ function composeQuestion(){
 }
 function setAnswer()
 {
-	
+
 	if(questionType == "multiply")
 		answer = number1 * number2;
 	else if(questionType == "divide")
