@@ -22,7 +22,10 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Cassidy/AIT-playground/StudentReportGenerator/mysql-connector-java-5.1.37/mysql-connector-java-5.1.37-bin.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Cassidy/AIT-playground/StudentReportGenerator/itext/itext-5.5.7/itextpdf-5.5.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Patrick Hall/AIT-playground/StudentReportGenerator/mysql-connector-java-5.1.37/mysql-connector-java-5.1.37-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Patrick Hall/AIT-playground/StudentReportGenerator/itext/itext-5.5.7/itextpdf-5.5.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Patrick Hall/AIT-playground/StudentReportGenerator/jfreechart-1.0.19/lib/jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Patrick Hall/AIT-playground/StudentReportGenerator/jfreechart-1.0.19/lib/jfreechart-1.0.19.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Patrick Hall/AIT-playground/StudentReportGenerator/jfreechart-1.0.19/lib/jfreechart-1.0.19-swt.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

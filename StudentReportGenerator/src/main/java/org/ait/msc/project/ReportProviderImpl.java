@@ -1,5 +1,7 @@
 package org.ait.msc.project;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ReportProviderImpl implements ReportProvider {
@@ -11,12 +13,12 @@ public class ReportProviderImpl implements ReportProvider {
 		StudentReport studentReport = ReportDatatbaseHandler.getStudentRecord(studentName);
 		reportGenerator.createReport(studentReport);
 	}
-	public void generateClassReport(String studentClass) {
+	public void generateClassReport(String studentClass) throws SQLException, IOException {
 		ArrayList<StudentReport> classReport = ReportDatatbaseHandler.getClassRecord(studentClass);
 		reportGenerator.createClassReport(classReport);
 	}
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws SQLException, IOException{
 		ReportProviderImpl reportProviderImpl =  new ReportProviderImpl();
 		//Generate Single Report for Parent
 		
