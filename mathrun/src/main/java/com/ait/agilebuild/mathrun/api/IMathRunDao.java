@@ -3,6 +3,7 @@ package com.ait.agilebuild.mathrun.api;
 import java.util.List;
 
 import com.ait.agilebuild.mathrun.model.Game;
+import com.ait.agilebuild.mathrun.model.Teacher;
 
 public interface IMathRunDao {
 
@@ -18,5 +19,7 @@ public interface IMathRunDao {
 	 * @see		com.ait.agilebuild.mathrun.model.Student
 	 */
 	public List<Game> getGames(long studentId);
+	
+	public List<Teacher> getTeachers();
 
 }

@@ -9,9 +9,10 @@
       <jta-data-source>java:jboss/datasources/mathrun</jta-data-source>
       <properties>
          <!-- Properties for Hibernate -->
-         <property name="hibernate.hbm2ddl.auto" value="create-drop" /> <!-- create / update -->
+         <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- create / update -->
          <property name="hibernate.show_sql" value="false" />
-         <property name="hibernate.hbm2ddl.import_files" value="/car.sql" />
+         
+         
       </properties>
    </persistence-unit>
 </persistence>
