@@ -16,10 +16,55 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class ReportGenerator {
 	
+	void createClassReport(ArrayList<StudentReport> classReport)
+	{	
+		try {
+			Document document = new Document();
+			Rectangle rect = new Rectangle(PageSize.LETTER);
+			document.setPageSize(rect);
+			DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+			Calendar calendar = Calendar.getInstance();
+			String pathname = "C:\\Users\\Cassidy\\ReportClass"+ df.format(calendar.getTime()) + ".pdf";
+			File file = new File(pathname);
+			PdfWriter.getInstance(document, new FileOutputStream(file));
+			document.open();
+			for(int i = 0; i < classReport.size(); i++)
+			{
+				
+				
+				Paragraph paragraphHeading = new Paragraph();
+				Paragraph paragraphResults = new Paragraph();
+				paragraphHeading.setAlignment(Element.ALIGN_CENTER);
+				paragraphHeading.add("StudentFuckU: " + classReport.get(i).getStudentName() + "\n");
+				paragraphHeading.add("Parent: " + classReport.get(i).getParentName());
+				paragraphHeading.add("Class: " + classReport.get(i).getStudentClass());
+				document.add(paragraphHeading);
+				System.out.println(classReport.get(i).getStudentName());
+				paragraphResults.setAlignment(Element.ALIGN_LEFT);
+				paragraphResults.add("Overall Progress:" + classReport.get(i).getOverallProgress() + "\n");
+				System.out.println(classReport.get(i).getOverallProgress());
+				paragraphResults.add(createFirstTable(classReport.get(i).getAdditionProficiency(), 
+						classReport.get(i).getSubtractionProficiency(),classReport.get(i).getMultipicationProficiency(), classReport.get(i).getDivisionProficiency() ));
+				paragraphResults.add("\nTables " + classReport.get(i).getStudentName() + " is good in:\n");
+				paragraphResults.add(classReport.get(i).getStrongTables() + "\n\n");
+				paragraphResults.add("Tables " + classReport.get(i).getStudentName() + " could improve in:\n");
+				paragraphResults.add(classReport.get(i).getWeakTables());
+				document.add(paragraphResults);
+			}
+			document.close();
+		}
+		catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (DocumentException e) {
+			e.printStackTrace();
+		}
+		
+	}
 	void createReport(StudentReport studentReport){
 		String studentName = studentReport.getStudentName();
 		String parentName = studentReport.getParentName();
@@ -37,7 +82,7 @@ public class ReportGenerator {
 		try {
 			DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
 			Calendar calendar = Calendar.getInstance();
-			String pathname = "C:\\Users\\Ronan\\Report"+studentName+ df.format(calendar.getTime()) + ".pdf";
+			String pathname = "C:\\Users\\Cassidy\\Report"+studentName+ df.format(calendar.getTime()) + ".pdf";
 			File file = new File(pathname);
 			PdfWriter.getInstance(document, new FileOutputStream(file));
 			document.open();
