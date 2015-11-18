@@ -1,6 +1,24 @@
 package com.ait.agilebuild.mathrun.model;
 
+import java.util.List;
+
+import javax.persistence.Basic;
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class QuestionDefinition {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
 	
 	private float first_value;
 	private float second_value;
@@ -10,13 +28,29 @@ public class QuestionDefinition {
 	private float correct_answer;
 	private int remainder;                                          //only available for divisions
 	
-	                  
-	private float[] attempts;
+	@ElementCollection
+	@CollectionTable(name="attempt", joinColumns=@JoinColumn(name="qd_id"))
+	@Column(name="attempt_answer")
+	private List<Float> attempts;
 	
-	private int[] attempt_duration;							    //time taken each attempt
+	@ElementCollection
+	@CollectionTable(name="attempt_duration", joinColumns=@JoinColumn(name="qd_id"))
+	@Column(name="attempt_time")
+	private List<Integer> attempt_duration;							    //time taken each attempt
 	
 	private int time;                                               //how long does kid spend on each question
+
+	@ManyToOne
+	@Basic(fetch = FetchType.EAGER)
+	@JoinColumn(name = "game")
+	private Game game;
 	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
 	public float getCorrect_answer() {
 		return correct_answer;
 	}
@@ -55,16 +89,16 @@ public class QuestionDefinition {
 		this.remainder = remainder;
 	}
 	
-	public float[] getAttempts() {
+	public List<Float> getAttempts() {
 		return attempts;
 	}
-	public void setAttempts(float[] attempts) {
+	public void setAttempts(List<Float> attempts) {
 		this.attempts = attempts;
 	}
-	public int[] getAttempt_duration() {
+	public List<Integer> getAttempt_duration() {
 		return attempt_duration;
 	}
-	public void setAttempt_duration(int[] attempt_duration) {
+	public void setAttempt_duration(List<Integer> attempt_duration) {
 		this.attempt_duration = attempt_duration;
 	}
 	public int getTime() {
@@ -78,5 +112,11 @@ public class QuestionDefinition {
 	}
 	public void setOperatorCh(String operatorCh) {
 		this.operatorCh = operatorCh;
+	}
+	public Game getGame() {
+		return game;
+	}
+	public void setGame(Game game) {
+		this.game = game;
 	}
 }

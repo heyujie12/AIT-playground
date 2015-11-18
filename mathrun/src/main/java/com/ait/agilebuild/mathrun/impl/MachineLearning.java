@@ -55,7 +55,7 @@ public class MachineLearning implements IMachineLearning{
 		int offset = 0;
 		for(int i = list.size() - 1; i>=0; i--){
 			QuestionDefinition q = list.get(i);
-			float finalAttemp = q.getAttempts()[q.getAttempts().length - 1];
+			float finalAttemp = q.getAttempts().get(q.getAttempts().size() - 1);
 			if(finalAttemp != q.getCorrect_answer()){
 				// when question is answered incorrectly
 				if(result > 0){
@@ -79,7 +79,7 @@ public class MachineLearning implements IMachineLearning{
 	}
 
 	private int calcQuestionGain(QuestionDefinition q) {
-		if(q.getAttempts().length == 1){
+		if(q.getAttempts().size() == 1){
 			if(q.getTime() < QUESTION_TIME_SPAN * 0.3){
 				return 5;
 			}else if(q.getTime() < QUESTION_TIME_SPAN * 0.7){
@@ -87,7 +87,7 @@ public class MachineLearning implements IMachineLearning{
 			}else if(q.getTime() < QUESTION_TIME_SPAN){
 				return 2;
 			}
-		}else if(q.getAttempts().length > 1){
+		}else if(q.getAttempts().size() > 1){
 			return 1;
 		}
 		return 0;
@@ -122,8 +122,8 @@ public class MachineLearning implements IMachineLearning{
 			List<QuestionDefinition> questionSet = entry.getValue();
 			List<Integer> values = new ArrayList<>();
 			for(QuestionDefinition q : questionSet){
-				if(q.getAttempt_duration().length > 0){
-					values.add(q.getAttempt_duration()[0]);
+				if(q.getAttempt_duration().size() > 0){
+					values.add(q.getAttempt_duration().get(0));
 				}
 			}
 			Distribution d = new Distribution(values);
@@ -143,8 +143,8 @@ public class MachineLearning implements IMachineLearning{
 			List<Integer> values = new ArrayList<>();
 			for(QuestionDefinition q : questionSet){
 				// attempts greater than 1 means first is incorrect attempt 
-				if(q.getAttempts().length > 1 && q.getAttempt_duration().length > 0){
-					values.add(q.getAttempt_duration()[0]);
+				if(q.getAttempts().size() > 1 && q.getAttempt_duration().size() > 0){
+					values.add(q.getAttempt_duration().get(0));
 				}
 			}
 			Distribution d = new Distribution(values);
@@ -169,10 +169,10 @@ public class MachineLearning implements IMachineLearning{
 			List<Integer> values = new ArrayList<>();
 			for(QuestionDefinition q : questionSet){
 				// attempts greater than 1 means first is incorrect attempt 
-				if(q.getAttempts().length > 1
-						&& isAdjacentKey(q.getAttempts()[0], q.getCorrect_answer())
-						&& q.getAttempt_duration().length > 0){
-					values.add(q.getAttempt_duration()[0]);
+				if(q.getAttempts().size() > 1
+						&& isAdjacentKey(q.getAttempts().get(0), q.getCorrect_answer())
+						&& q.getAttempt_duration().size() > 0){
+					values.add(q.getAttempt_duration().get(0));
 				}
 			}
 			Distribution d = new Distribution(values);
