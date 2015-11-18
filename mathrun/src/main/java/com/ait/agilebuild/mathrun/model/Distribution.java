@@ -7,7 +7,6 @@ import java.util.List;
 import org.apache.commons.math.MathException;
 import org.apache.commons.math.distribution.NormalDistribution;
 import org.apache.commons.math.distribution.NormalDistributionImpl;
-import org.apache.commons.math.special.Erf;
 
 public class Distribution {
 	private List<? extends Number> numbers;
@@ -93,7 +92,6 @@ public class Distribution {
 	/**
 	 * The calculation is done here. Example: From 1.96 (Z-score) to 0.975
 	 * (P-value) From -1.96 (Z-score) to 0.025
-	 *
 	 * @return double a p value
 	 */
 	public static double cumulativeProbability(Distribution obj, Number n) {
@@ -102,7 +100,7 @@ public class Distribution {
         try {
             lQuantile = dist.cumulativeProbability(obj.zScore(n));
         } catch (MathException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace(); 
         }
         return lQuantile;
 	}
