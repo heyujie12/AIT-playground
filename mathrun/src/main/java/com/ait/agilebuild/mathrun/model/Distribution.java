@@ -7,10 +7,6 @@ import java.util.List;
 import org.apache.commons.math.MathException;
 import org.apache.commons.math.distribution.NormalDistribution;
 import org.apache.commons.math.distribution.NormalDistributionImpl;
-<<<<<<< HEAD
-import org.apache.commons.math.special.Erf;
-=======
->>>>>>> implement standard deviation & zScore & cumulative probability functions in Distribution class
 
 public class Distribution {
 	private List<? extends Number> numbers;
