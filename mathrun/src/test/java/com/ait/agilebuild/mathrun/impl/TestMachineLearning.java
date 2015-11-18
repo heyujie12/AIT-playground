@@ -1,19 +1,13 @@
 package com.ait.agilebuild.mathrun.impl;
 
-import java.util.ArrayList;
-
-import org.junit.Before;
-import org.junit.Test;
-
-import com.ait.agilebuild.mathrun.api.IMachineLearning;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.testng.annotations.Test;
 import org.mockito.internal.util.reflection.Whitebox;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
 import com.ait.agilebuild.mathrun.api.IMachineLearning;
 import com.ait.agilebuild.mathrun.api.IQuestionsGenerator;
@@ -155,7 +149,7 @@ public class TestMachineLearning {
 		QuestionDefinition nextQ11 = ml.produceNextQuestion(p10);
 		assertTrue("Is next question level one more than that of the last one:  ", nextQ11.getDifficulty_level() == initialLevel + 1);
 	}
-	
+
 	private QuestionDefinition getNormalResponseQuestion(QuestionDefinition q){
 		final int time = (int) (MachineLearning.QUESTION_TIME_SPAN * 0.9);
 		List<Float> attempts = new ArrayList<>();

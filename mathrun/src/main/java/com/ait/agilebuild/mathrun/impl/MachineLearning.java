@@ -17,7 +17,7 @@ import com.ait.agilebuild.mathrun.model.QuestionDefinition;
 
 @Stateless
 public class MachineLearning implements IMachineLearning{
-	private static final long QUESTION_TIME_SPAN = 8000;
+	public static final long QUESTION_TIME_SPAN = 8000;
 	@Inject
 	private IQuestionsGenerator qGenerator;
 
@@ -27,7 +27,7 @@ public class MachineLearning implements IMachineLearning{
 			throw new IllegalArgumentException("Progression can not be null");
 		}
 		if(p.size() == 0){
-			throw new IllegalStateException("Progression size can not be zero");
+			throw new IllegalArgumentException("Progression size can not be zero");
 		}
 		// Machine learning
 		List<QuestionDefinition> questions = findQuestionsWithSameLevel(p);
@@ -61,7 +61,7 @@ public class MachineLearning implements IMachineLearning{
 				if(result > 0){
 					result = 0;
 				}
-				result = -5;
+				result -= 5;
 			}else{
 				// when question is answered correctly
 				result += calcQuestionGain(q);

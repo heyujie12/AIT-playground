@@ -7,6 +7,7 @@ import com.ait.agilebuild.mathrun.model.QuestionDefinition;
 public class generate3rdMedium {
 	public QuestionDefinition getQ(){
 		QuestionDefinition Qd= new QuestionDefinition();
+		Qd.setDifficulty_level(5);
 		Random random = new Random();
 		int temp_firstValueA = random.nextInt(600)%(600-50+1) + 50;
 		int temp_secondValueA = random.nextInt(100)%(100-50+1) + 50;
