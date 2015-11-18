@@ -17,9 +17,11 @@ import javax.persistence.OneToMany;
 public class Student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private long idStudent;
 	
 	private String name;
+	private String age;
+	private String year;
 	
 	private String className;
 
@@ -27,10 +29,6 @@ public class Student {
 	@Basic(fetch = FetchType.EAGER)
 	@JoinColumn(name = "teacher")
 	private Teacher teacher;
-	private long idStudent;
-
-	private String age;
-	private String year;
 
 
 	@ManyToOne
