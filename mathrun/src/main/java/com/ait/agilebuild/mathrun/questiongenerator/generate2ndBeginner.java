@@ -9,7 +9,6 @@ public class generate2ndBeginner {
 	
 	public QuestionDefinition getQ(){
 		QuestionDefinition Qd = new QuestionDefinition();
-		Qd.setDifficulty_level(1);
 		Random random = new Random();
 		Qd.setFirst_value(random.nextInt(99)%(99-10+1) + 10) ;
 		Qd.setSecond_value(random.nextInt(10)%(10-0+1) + 0);

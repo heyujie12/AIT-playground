@@ -7,7 +7,6 @@ import com.ait.agilebuild.mathrun.model.QuestionDefinition;
 public class generate5thMedium {
 	public QuestionDefinition getQ(){
 		QuestionDefinition Qd= new QuestionDefinition();
-		Qd.setDifficulty_level(11);
 		Random random = new Random();
 		float temp_firstValueA = random.nextInt(1500)%(1500-10+1) + 10;
 		float temp_secondValueA = random.nextInt(1500)%(1500-10+1) + 10;
@@ -35,7 +34,7 @@ public class generate5thMedium {
 						Qd.setFirst_value(temp_firstValueB);
 						Qd.setSecond_value(temp_secondValueB);
 						Qd.setOperatorCh("-");
-						Qd.setCorrect_answer(temp_firstValueB + temp_secondValueB);
+						Qd.setCorrect_answer(temp_firstValueB - temp_secondValueB);
 						return Qd;
 					}else{
 						return getQ();

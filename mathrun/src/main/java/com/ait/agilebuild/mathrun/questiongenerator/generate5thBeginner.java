@@ -7,15 +7,14 @@ import com.ait.agilebuild.mathrun.model.QuestionDefinition;
 public class generate5thBeginner {
 	public QuestionDefinition getQ(){
 		QuestionDefinition Qd= new QuestionDefinition();
-		Qd.setDifficulty_level(10);
 		Random random = new Random();
-		int temp_firstValueA = random.nextInt(1500)%(1500-10+1) + 10;
-		int temp_secondValueA = random.nextInt(1500)%(1500-10+1) + 10;
-		int temp_firstValueB = random.nextInt(300)%(300-10+1) + 10;
-		int temp_secondValueB = random.nextInt(100)%(100-10+1) + 10;
-		int temp_firstValueC = random.nextInt(100)%(100-1+1) + 1;
+		int temp_firstValueA = random.nextInt(1500)%(1500-500+1) + 500;
+		int temp_secondValueA = random.nextInt(1500)%(1500-500+1) + 500;
+		int temp_firstValueB = random.nextInt(300)%(300-150+1) + 150;
+		int temp_secondValueB = random.nextInt(100)%(100-50+1) + 50;
+		int temp_firstValueC = random.nextInt(100)%(100-20+1) + 20;
 		int temp_secondValueC = random.nextInt(10)%(10-1+1) + 1;
-		int temp_firstValueD = random.nextInt(100)%(100-1+1) + 1;
+		int temp_firstValueD = random.nextInt(100)%(100-10+1) + 10;
 		int temp_secondValueD = random.nextInt(10)%(10-1+1) + 1;
 		Qd.setOperator(random.nextInt(4)%(4-1+1) + 1);
 		switch(Qd.getOperator()){
@@ -35,7 +34,7 @@ public class generate5thBeginner {
 						Qd.setFirst_value(temp_firstValueB);
 						Qd.setSecond_value(temp_secondValueB);
 						Qd.setOperatorCh("-");
-						Qd.setCorrect_answer(temp_firstValueB + temp_secondValueB);
+						Qd.setCorrect_answer(temp_firstValueB - temp_secondValueB);
 						return Qd;
 					}else{
 						return getQ();

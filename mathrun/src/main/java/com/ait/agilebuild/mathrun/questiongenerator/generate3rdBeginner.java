@@ -7,7 +7,6 @@ import com.ait.agilebuild.mathrun.model.QuestionDefinition;
 public class generate3rdBeginner {
 	public QuestionDefinition getQ(){
 		QuestionDefinition Qd= new QuestionDefinition();
-		Qd.setDifficulty_level(4);
 		Random random = new Random();
 		int temp_firstValueA = random.nextInt(300)%(300-10+1) + 10;
 		int temp_secondValueA = random.nextInt(99)%(99-10+1) + 10;
@@ -31,7 +30,7 @@ public class generate3rdBeginner {
 						Qd.setFirst_value(temp_firstValueB);
 						Qd.setSecond_value(temp_secondValueB);
 						Qd.setOperatorCh("-");
-						Qd.setCorrect_answer(temp_firstValueB + temp_secondValueB);
+						Qd.setCorrect_answer(temp_firstValueB - temp_secondValueB);
 						return Qd;
 					}else{
 						return getQ();

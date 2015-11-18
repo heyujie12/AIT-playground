@@ -8,7 +8,6 @@ public class generate2ndAdvanced {
 	
 	public QuestionDefinition getQ(){
 		QuestionDefinition Qd= new QuestionDefinition();
-		Qd.setDifficulty_level(3);
 		Random random = new Random();
 		int temp_firstValueA = random.nextInt(99)%(99-10+1) + 10;
 		int temp_secondValueA = random.nextInt(99)%(99-10+1) + 10;

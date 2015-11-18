@@ -39,7 +39,7 @@ import javax.persistence.PersistenceContextType;
 @RequestScoped
 public class ResourceService {
 
-    @PersistenceContext
+    @PersistenceContext(type = PersistenceContextType.EXTENDED)
     private EntityManager em;
 
     @Produces

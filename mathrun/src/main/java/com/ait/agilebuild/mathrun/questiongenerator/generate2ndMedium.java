@@ -8,7 +8,6 @@ public class generate2ndMedium {
 	
 	public QuestionDefinition getQ(){
 		QuestionDefinition Qd= new QuestionDefinition();
-		Qd.setDifficulty_level(2);
 		Random random = new Random();
 		Qd.setFirst_value(random.nextInt(99)%(99-10+1) + 10);
 		Qd.setSecond_value(random.nextInt(99)%(99-10+1) + 10);
