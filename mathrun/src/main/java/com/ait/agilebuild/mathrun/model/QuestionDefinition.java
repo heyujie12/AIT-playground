@@ -13,9 +13,10 @@ public class QuestionDefinition {
 	                  
 	private float[] attempts;
 	
-	private int[] attempt_duration;							    //time taken each attempt
+	private long[] attempt_duration;							    //time taken each attempt
 	
 	private int time;                                               //how long does kid spend on each question
+	
 	
 	public float getCorrect_answer() {
 		return correct_answer;
@@ -61,10 +62,10 @@ public class QuestionDefinition {
 	public void setAttempts(float[] attempts) {
 		this.attempts = attempts;
 	}
-	public int[] getAttempt_duration() {
+	public long[] getAttempt_duration() {
 		return attempt_duration;
 	}
-	public void setAttempt_duration(int[] attempt_duration) {
+	public void setAttempt_duration(long[] attempt_duration) {
 		this.attempt_duration = attempt_duration;
 	}
 	public int getTime() {

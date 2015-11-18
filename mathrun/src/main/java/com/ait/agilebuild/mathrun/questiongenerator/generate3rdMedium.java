@@ -7,10 +7,9 @@ import com.ait.agilebuild.mathrun.model.QuestionDefinition;
 public class generate3rdMedium {
 	public QuestionDefinition getQ(){
 		QuestionDefinition Qd= new QuestionDefinition();
-		Qd.setDifficulty_level(5);
 		Random random = new Random();
-		int temp_firstValueA = random.nextInt(600)%(600-10+1) + 10;
-		int temp_secondValueA = random.nextInt(100)%(100-10+1) + 10;
+		int temp_firstValueA = random.nextInt(600)%(600-50+1) + 50;
+		int temp_secondValueA = random.nextInt(100)%(100-50+1) + 50;
 		int temp_firstValueB = random.nextInt(100)%(100-10+1) + 10;
 		int temp_secondValueB = random.nextInt(100)%(100-10+1) + 10;
 		int temp_firstValueC = random.nextInt(10)%(10-1+1) + 1;
@@ -33,7 +32,7 @@ public class generate3rdMedium {
 						Qd.setFirst_value(temp_firstValueB);
 						Qd.setSecond_value(temp_secondValueB);
 						Qd.setOperatorCh("-");
-						Qd.setCorrect_answer(temp_firstValueB + temp_secondValueB);
+						Qd.setCorrect_answer(temp_firstValueB - temp_secondValueB);
 						return Qd;
 					}else{
 						return getQ();

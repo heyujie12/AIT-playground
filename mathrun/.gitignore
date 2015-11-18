@@ -1,6 +1,3 @@
 /build/
 /target/
 .settings
-bin
-.classpath
-test-output/
