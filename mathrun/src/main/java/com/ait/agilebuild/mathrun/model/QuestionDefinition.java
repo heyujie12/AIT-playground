@@ -140,5 +140,9 @@ public class QuestionDefinition {
 	public void setGame(Game game) {
 		this.game = game;
 	}
+	
+	public boolean isAnsweredCorrectly(){
+		return correct_answer == attempts.get(attempts.size()-1);
+	}
 
 }

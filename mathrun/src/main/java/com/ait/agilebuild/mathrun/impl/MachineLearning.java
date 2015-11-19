@@ -10,16 +10,20 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.ait.agilebuild.mathrun.api.IMachineLearning;
+import com.ait.agilebuild.mathrun.api.IMathRunDao;
 import com.ait.agilebuild.mathrun.api.IQuestionsGenerator;
 import com.ait.agilebuild.mathrun.model.Distribution;
 import com.ait.agilebuild.mathrun.model.Progression;
 import com.ait.agilebuild.mathrun.model.QuestionDefinition;
+import com.ait.agilebuild.mathrun.model.Student;
 
 @Stateless
 public class MachineLearning implements IMachineLearning{
 	public static final long QUESTION_TIME_SPAN = 8000;
 	@Inject
 	private IQuestionsGenerator qGenerator;
+	@Inject
+	private IMathRunDao mathrunDao;
 
 	@Override
 	public QuestionDefinition produceNextQuestion(Progression<QuestionDefinition> p){
@@ -99,7 +103,7 @@ public class MachineLearning implements IMachineLearning{
 		}
 	}
 
-	private Map<Integer, List<QuestionDefinition>> getClassification(List<QuestionDefinition> list) {
+	private Map<Integer, List<QuestionDefinition>> groupByDifficultLevel(List<QuestionDefinition> list) {
 		checkListValidity(list);
 		Map<Integer, List<QuestionDefinition>> classification = new HashMap<>();
 		for(QuestionDefinition q : list){
@@ -112,10 +116,64 @@ public class MachineLearning implements IMachineLearning{
 		return classification;
 	}
 
+	private static final double INVALID_AVG = 1;
+	@Override
+	public Map<Integer, Double> generateLevelProficiency(
+			long studentId) {
+		Map<Integer, Double> result = new HashMap<>();
+		
+		Student student = mathrunDao.getStudentById(studentId);
+		Map<Integer, List<QuestionDefinition>> classification = groupByDifficultLevel(student.getAllQuestions());
+
+		for(Entry<Integer, List<QuestionDefinition>> entry : classification.entrySet()){
+			List<Double> values = new ArrayList<>();
+			final int level = entry.getKey();
+			List<QuestionDefinition> allQuestionsInLevel = mathrunDao.getQuestionsByLevel(level);
+			Map<Long, List<QuestionDefinition>> questionsPerStudent = groupByStudent(allQuestionsInLevel);
+
+			for(Entry<Long, List<QuestionDefinition>> studentEntry : questionsPerStudent.entrySet()){
+				double avg = getAvgAccurarcy(studentEntry.getValue());
+				if(avg != INVALID_AVG){
+					values.add(avg);
+				}
+			}
+			Distribution d = new Distribution(values);
+			double proficiency = Distribution.cumulativeProbability(d, getAvgAccurarcy(entry.getValue()));
+			result.put(level, proficiency);
+		}
+		
+		return result;
+	}
+	
+	private Map<Long, List<QuestionDefinition>> groupByStudent(List<QuestionDefinition> questions) {
+		Map<Long, List<QuestionDefinition>> classification = new HashMap<>();
+		for(QuestionDefinition q : questions){
+			final long student = q.getGame().getStudent().getIdStudent();
+			if(classification.get(student) == null){
+				classification.put(student, new ArrayList<QuestionDefinition>());
+			}
+			classification.get(student).add(q);
+		}
+		return classification;
+	}
+
+	private double getAvgAccurarcy(List<QuestionDefinition> list){
+		if(list == null || list.size() == 0){
+			return INVALID_AVG;
+		}
+		double count = 0;
+		for(QuestionDefinition q : list){
+			if(q.isAnsweredCorrectly()){
+				count++;
+			}
+		}
+		return count / list.size();
+	}
+
 	@Override
 	public Map<Integer, Distribution> generateFirstResponseDistribution(
 			List<QuestionDefinition> list) {
-		Map<Integer, List<QuestionDefinition>> classification = getClassification(list);
+		Map<Integer, List<QuestionDefinition>> classification = groupByDifficultLevel(list);
 		Map<Integer, Distribution> resultMap = new HashMap<>();
 		
 		for(Entry<Integer, List<QuestionDefinition>> entry : classification.entrySet()){
@@ -135,7 +193,7 @@ public class MachineLearning implements IMachineLearning{
 	@Override
 	public Map<Integer, Distribution> generateFirstFaultResponseDistribution(
 			List<QuestionDefinition> list) {
-		Map<Integer, List<QuestionDefinition>> classification = getClassification(list);
+		Map<Integer, List<QuestionDefinition>> classification = groupByDifficultLevel(list);
 		Map<Integer, Distribution> resultMap = new HashMap<>();
 		
 		for(Entry<Integer, List<QuestionDefinition>> entry : classification.entrySet()){
@@ -161,7 +219,7 @@ public class MachineLearning implements IMachineLearning{
 	@Override
 	public Map<Integer, Distribution> generateFirstAttemptOnAdjacentKeys(
 			List<QuestionDefinition> list) {
-		Map<Integer, List<QuestionDefinition>> classification = getClassification(list);
+		Map<Integer, List<QuestionDefinition>> classification = groupByDifficultLevel(list);
 		Map<Integer, Distribution> resultMap = new HashMap<>();
 		
 		for(Entry<Integer, List<QuestionDefinition>> entry : classification.entrySet()){

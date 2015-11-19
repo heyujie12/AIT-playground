@@ -4,12 +4,14 @@ import java.util.List;
 
 
 
+
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import com.ait.agilebuild.mathrun.api.IMathRunDao;
 import com.ait.agilebuild.mathrun.model.Game;
+import com.ait.agilebuild.mathrun.model.QuestionDefinition;
 import com.ait.agilebuild.mathrun.model.Student;
 import com.ait.agilebuild.mathrun.model.StudentReport;
 import com.ait.agilebuild.mathrun.model.Teacher;
@@ -63,6 +65,19 @@ public class MathRunDao implements IMathRunDao {
 	public List<Student> getStudentsByClass(String studentClass) {
 		Query query = em.createQuery("SELECT s FROM Student s where s.className = :className");
 		query.setParameter("className", studentClass);
+		return query.getResultList();
+	}
+
+	@Override
+	public List<Student> getAllStudents() {
+		Query query = em.createQuery("SELECT s FROM Student s");
+		return query.getResultList();
+	}
+
+	@Override
+	public List<QuestionDefinition> getQuestionsByLevel(int level) {
+		Query query = em.createQuery("SELECT q FROM Student QuestionDefinition q where q.difficulty_level = :difficulty_level");
+		query.setParameter("className", level);
 		return query.getResultList();
 	}
 

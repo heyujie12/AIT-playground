@@ -1,5 +1,7 @@
 package com.ait.agilebuild.mathrun.controller;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -13,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ait.agilebuild.mathrun.impl.ReportGenerator;
 
-@WebServlet(name = "AllStudents", urlPatterns = {"/report"})
+@WebServlet(name = "ReportServlet", urlPatterns = {"/report"})
 public class ReportServlet extends HttpServlet{
 	
 	@Inject
@@ -24,6 +26,11 @@ public class ReportServlet extends HttpServlet{
             throws ServletException, IOException {
 
     	System.out.println("report doGet process request");
+    	
+//    	String studentId = request.getParameter("studentId");
+//    	File pdfFile = rg.generateReport(Long.parseLong(studentId));
+//    	InputStream in = new FileInputStream(pdfFile);
+    	
     	// Load the directory as a resource	
 		InputStream in = this.getClass().getResourceAsStream("/temp.txt");
 		response.setContentType("application/force-download");
