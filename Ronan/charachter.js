@@ -33,7 +33,12 @@ function animateCharachter(){
 	ctx.clearRect(100,placeY,frameSize+750,frameHeight);
 	ctx.drawImage(img,charX,charY,frameSize,frameHeight,placeX,placeY,frameSize,frameHeight);
 	//animation loop
-	placeX = placeX - 1.5;
+	
+	//Takes 20 seconds at -1
+	placeX = placeX - 1;
+	//Takes 14 seconds at 1.5
+	//placeX = placeX - 1.5;
+	
 	if(charX + frameSize >= img.width )
 	{
 		charX = 0;

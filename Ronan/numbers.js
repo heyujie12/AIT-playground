@@ -3,6 +3,7 @@ var qAnswer = 0;
 var text = 0;
 var lastText = null;
 var lastLastText = null;
+var numberOfAttempts = 0;
 //number is clicked and drawn also has fuctionality for determining if it is 2 digits or not
 function numClicked(input)
 {
@@ -14,14 +15,17 @@ function numClicked(input)
 		//has 1 digit
 		if (qAnswer < 10)
 		{
-			ctx.clearRect(145,20,400,250);
+			ctx.clearRect(145,20,750,250);
 			ctx.font="30px Georgia";
 			ctx.fillText(input,150,50);
+			numberOfAttempts = numberOfAttempts + 1;
 			if (input == qAnswer)
 			{
 				ctx.clearRect(145,20,750,250);
-				ctx.fillText(input + " is the correct answer",450,50);
+				ctx.fillText(input + " is correct "+numberOfAttempts+" Attempts",450,50);
+				numberOfAttempts = 0;
 				updateScore(5);
+				text = null;
 				loop();
 			}
 		}
@@ -31,8 +35,10 @@ function numClicked(input)
 			ctx.clearRect(145,20,750,250);
 			ctx.font="30px Georgia";
 			var answerText = "";
-			if(lastText != null)
+			if(lastText != null){
 				answerText = "" + lastText + text;
+				numberOfAttempts = numberOfAttempts + 1;
+			}
 			else
 				answerText = text;
 
@@ -43,11 +49,11 @@ function numClicked(input)
 			if(answerText == qAnswer)
 			{
 				ctx.clearRect(145,20,750,250);
-				ctx.fillText(answerText + " is the correct answer",450,50);
-				console.log("Fair Play");
+				ctx.fillText(answerText +" is correct "+numberOfAttempts+" Attempts",450,50);
+				numberOfAttempts = 0;
 				updateScore(5);
-				lastText = 0;
-				text = 0;
+				lastText = null;
+				text = null;
 				loop();
 			}
 			else
@@ -66,7 +72,8 @@ function numClicked(input)
 			else if(lastText != null && lastLastText == null)
 				answerText = "" + 0 + lastText + text;
 			else{
-				answerText = "" + lastLastText + lastText + text ;
+				answerText = "" + lastLastText + lastText + text;
+				numberOfAttempts = numberOfAttempts + 1;
 			}
 			console.log(answerText);
 			ctx.fillText(answerText,150,50);
@@ -74,12 +81,13 @@ function numClicked(input)
 			if(answerText == qAnswer)
 			{
 				ctx.clearRect(145,20,750,250);
-				ctx.fillText(answerText + " is the correct answer",450,50);
-				console.log("Fair Play");
+				ctx.fillText(answerText + " is correct "+numberOfAttempts+" Attempts",450,50);
+				//Send Attempts + Time Taken
+				numberOfAttempts = 0;
 				updateScore(5);
-				text = 0;
-				lastText = 0;
-				lastLastText = 0;
+				text = null;
+				lastText = null;
+				lastLastText = null;
 				loop();
 			}
 			else
@@ -98,7 +106,7 @@ function numClicked(input)
 		ctx.clearRect(145,20,750,250);
 		ctx.font="30px Georgia";
 		ctx.fillText(" ",150,50);
-		lastText = 0;
-		lastLastText = 0;
+		lastText = null;
+		lastLastText = null;
 	}
 }
