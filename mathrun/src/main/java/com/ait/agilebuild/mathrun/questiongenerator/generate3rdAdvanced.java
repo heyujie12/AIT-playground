@@ -8,6 +8,7 @@ public class generate3rdAdvanced {
 	
 	public QuestionDefinition getQ(){
 	QuestionDefinition Qd= new QuestionDefinition();
+	Qd.setDifficulty_level(6);
 	Random random = new Random();
 	int temp_firstValueA = random.nextInt(600)%(600-50+1) + 50;
 	int temp_secondValueA = random.nextInt(600)%(600-50+1) + 50;

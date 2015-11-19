@@ -7,6 +7,7 @@ import com.ait.agilebuild.mathrun.model.QuestionDefinition;
 public class generate5thBeginner {
 	public QuestionDefinition getQ(){
 		QuestionDefinition Qd= new QuestionDefinition();
+		Qd.setDifficulty_level(10);
 		Random random = new Random();
 		int temp_firstValueA = random.nextInt(1500)%(1500-500+1) + 500;
 		int temp_secondValueA = random.nextInt(1500)%(1500-500+1) + 500;

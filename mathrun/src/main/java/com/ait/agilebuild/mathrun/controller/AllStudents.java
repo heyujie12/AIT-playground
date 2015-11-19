@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.ait.agilebuild.mathrun.api.IMathRunDao;
-import com.ait.agilebuild.mathrun.impl.MathRunDao;
-import com.ait.agilebuild.mathrun.model.Student;
 import com.ait.agilebuild.mathrun.model.Teacher;
 //import model.ejb.StudentDAO;
 

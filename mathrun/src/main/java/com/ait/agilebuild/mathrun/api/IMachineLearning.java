@@ -6,6 +6,7 @@ import java.util.Map;
 import com.ait.agilebuild.mathrun.model.Distribution;
 import com.ait.agilebuild.mathrun.model.Progression;
 import com.ait.agilebuild.mathrun.model.QuestionDefinition;
+import com.ait.agilebuild.mathrun.model.Student;
 
 public interface IMachineLearning {
 	
@@ -15,6 +16,15 @@ public interface IMachineLearning {
 	 * @return QuestionDefinition object
 	 */
 	public QuestionDefinition produceNextQuestion(Progression<QuestionDefinition> p);
+	
+	/**
+	 *	Returns a map object in which question difficulty level is the key
+	 *	and Double object is the value. 
+	 *	Double represents proficiency of related difficulty level
+	 *	@param long studentId
+	 *	@return Map<Integer, Double>
+	 */
+	public Map<Integer, Double> generateLevelProficiency(long studentId);
 	
 	/**
 	 *	Returns a map object in which question difficulty level is the key
