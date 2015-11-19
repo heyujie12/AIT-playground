@@ -42,13 +42,12 @@ public class ReportGenerator {
 			
 			Font font1 = new Font(Font.FontFamily.HELVETICA, 18, Font.BOLD);
 	        Font font2 = new Font(Font.FontFamily.TIMES_ROMAN, 16,Font.ITALIC);
-	        Font font3 = new Font(Font.FontFamily.TIMES_ROMAN, 27);
 			Document document = new Document(PageSize.A4,50,50,PageSize.A4.getHeight()/2,50);
 			Rectangle rect = new Rectangle(PageSize.LETTER);
 			document.setPageSize(rect);
 			DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
 			Calendar calendar = Calendar.getInstance();
-			String pathname = "C:\\Users\\Patrick Hall\\ClassReport"+ df.format(calendar.getTime()) + ".pdf";
+			String pathname = "C:\\Users\\Ronan\\ClassReport"+ df.format(calendar.getTime()) + ".pdf";
 			File file = new File(pathname);
 			PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(file));
 			document.open();
@@ -102,45 +101,48 @@ public class ReportGenerator {
 		
 	}
 	void createReport(StudentReport studentReport){
-		String studentName = studentReport.getStudentName();
-		String parentName = studentReport.getParentName();
-		String overallProgress = studentReport.getOverallProgress();
-		String additionProficiency = studentReport.getAdditionProficiency();
-		String subtractionProficiency = studentReport.getSubtractionProficiency();
-		String multipicationProficiency = studentReport.getMultipicationProficiency();
-		String divisionProficiency = studentReport.getDivisionProficiency();
-		String strongTables = studentReport.getStrongTables();
-		String weakTables = studentReport.getWeakTables();
-		String studentClass = studentReport.getStudentClass();
-		Document document = new Document();
-		Rectangle rect = new Rectangle(PageSize.LETTER);
-		document.setPageSize(rect);
-		try {
-			DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-			Calendar calendar = Calendar.getInstance();
-			String pathname = "C:\\Users\\Cassidy\\Report"+studentName+ df.format(calendar.getTime()) + ".pdf";
+		Font font1 = new Font(Font.FontFamily.HELVETICA, 18, Font.BOLD);
+        Font font2 = new Font(Font.FontFamily.TIMES_ROMAN, 16,Font.ITALIC);
+        try {
+        	Document document = new Document();
+        	Rectangle rect = new Rectangle(PageSize.LETTER);
+        	document.setPageSize(rect);
+        	DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        	Calendar calendar = Calendar.getInstance();
+		
+		
+			String pathname = "C:\\Users\\Ronan\\Reports"+studentReport.getStudentName()+ df.format(calendar.getTime()) + ".pdf";
 			File file = new File(pathname);
 			PdfWriter.getInstance(document, new FileOutputStream(file));
 			document.open();
-			Paragraph paragraphHeading = new Paragraph();
-			Paragraph paragraphResults = new Paragraph();
+		
+			Paragraph paragraphHeading = new Paragraph(40);
+			Paragraph paragraphResults = new Paragraph(30);
 			paragraphHeading.setAlignment(Element.ALIGN_CENTER);
-			paragraphHeading.add("Student: " + studentName + "\n");
-			paragraphHeading.add("Parent: " + parentName);
-			paragraphHeading.add("Class: " + studentClass);
+			paragraphHeading.setFont(font1);
+			paragraphHeading.add(" Student: " + studentReport.getStudentName() + "\n");
+			paragraphHeading.add(" Parent: " + studentReport.getParentName() + "\n");
+			paragraphHeading.add(" Class: " + studentReport.getStudentClass()+ "\n");
+			paragraphHeading.setSpacingAfter(50);
 			document.add(paragraphHeading);
+			
 			paragraphResults.setAlignment(Element.ALIGN_LEFT);
-			paragraphResults.add("Overall Progress:" + overallProgress + "\n");
-			paragraphResults.add(createFirstTable(additionProficiency, subtractionProficiency, multipicationProficiency, divisionProficiency ));
-			paragraphResults.add("\nTables " + studentName + " is good in:\n");
-			paragraphResults.add(strongTables + "\n\n");
-			paragraphResults.add("Tables " + studentName + " could improve in:\n");
-			paragraphResults.add(weakTables);
+			paragraphResults.setFont(font2);
+			paragraphResults.add("Overall Progress: " + studentReport.getOverallProgress() + "\n");
+			
+			paragraphResults.add("\nTables " + studentReport.getStudentName() + " is good in: ");
+			paragraphResults.add(studentReport.getStrongTables() + "\n\n");
+			paragraphResults.add("Tables " + studentReport.getStudentName() + " could improve in: ");
+			paragraphResults.add(studentReport.getWeakTables());
+			paragraphResults.add(createFirstTable(studentReport.getAdditionProficiency(), 
+					studentReport.getSubtractionProficiency(),studentReport.getMultipicationProficiency(), studentReport.getDivisionProficiency() ));
+			
 			document.add(paragraphResults);
 			document.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
 		} catch (DocumentException e) {
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}		
 	}

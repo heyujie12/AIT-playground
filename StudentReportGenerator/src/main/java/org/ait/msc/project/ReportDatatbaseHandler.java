@@ -81,42 +81,20 @@ public class ReportDatatbaseHandler {
 			System.out.println("Creating statement...");
 			stmt = conn.createStatement();
 			String sql;
-			sql = "SELECT * FROM studentrecord WHERE studentrecord.CLASS='"+name+"'";
+			sql = "SELECT * FROM studentrecord WHERE studentrecord.STUDENT_ID='"+name+"'";
 			ResultSet rs = stmt.executeQuery(sql);
 
 			while (rs.next()) {
-				String studentName = rs.getString("STUDENT_ID");
-				String parentName = rs.getString("PARENT");
-				String overallProgress = rs.getString("OVERALL_PROGRESS");
-				String additionProficiency = rs.getString("PROGRESS_ADDITION");
-				String subtractionProficiency = rs.getString("PROGRESS_SUBTRACTION");
-				String multipicationProficiency = rs.getString("PROGRESS_MULTIPLICATION");
-				String divisionProficiency = rs.getString("PROGRESS_DIVISION");
-				String strongTables = rs.getString("STRONG_TABLES");
-				String weakTables = rs.getString("WEAK_TABLES");
-				String studentClass = rs.getString("CLASS");
-				// Display values
-				System.out.print("STUDENT_ID: " + studentName);
-				studentReport.setStudentName(studentName);
-				System.out.print("PARENT: " + parentName);
-				studentReport.setParentName(parentName);
-				System.out.print("OVERALL_PROGRESS: " + overallProgress);
-				studentReport.setOverallProgress(overallProgress);
-				System.out.print("PROGRESS_ADDITION: " + additionProficiency);
-				studentReport.setAdditionProficiency(additionProficiency);
-				System.out.print("PROGRESS_SUBTRACTION: " + subtractionProficiency);
-				studentReport.setSubtractionProficiency(subtractionProficiency);
-				System.out.print("PROGRESS_MULTIPLICATION: " + multipicationProficiency);
-				studentReport.setMultipicationProficiency(multipicationProficiency);
-				System.out.print("PROGESS_DIVISION: " + divisionProficiency);
-				studentReport.setDivisionProficiency(divisionProficiency);
-				System.out.print("STRONG_TABLES: " + strongTables);
-				studentReport.setStrongTables(strongTables);
-				System.out.print("WEAK_TABLES: " + weakTables);
-				studentReport.setWeakTables(weakTables);
-				System.out.print("CLASS: " + studentClass);
-				studentReport.setStudentClass(studentClass);
-
+				studentReport.setStudentName(rs.getString("STUDENT_ID"));
+				studentReport.setParentName(rs.getString("PARENT"));
+				studentReport.setOverallProgress(rs.getString("OVERALL_PROGRESS"));
+				studentReport.setAdditionProficiency(rs.getString("PROGRESS_ADDITION"));
+				studentReport.setSubtractionProficiency(rs.getString("PROGRESS_SUBTRACTION"));
+				studentReport.setMultipicationProficiency(rs.getString("PROGRESS_MULTIPLICATION"));
+				studentReport.setDivisionProficiency(rs.getString("PROGRESS_DIVISION"));
+				studentReport.setStrongTables(rs.getString("STRONG_TABLES"));
+				studentReport.setWeakTables(rs.getString("WEAK_TABLES"));
+				studentReport.setStudentClass(rs.getString("CLASS"));
 			}
 			// STEP 6: Clean-up environment
 			rs.close();

@@ -1,8 +1,11 @@
 package org.ait.msc.project;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import com.itextpdf.text.DocumentException;
 
 public class ReportProviderImpl implements ReportProvider {
 	
@@ -22,9 +25,9 @@ public class ReportProviderImpl implements ReportProvider {
 		ReportProviderImpl reportProviderImpl =  new ReportProviderImpl();
 		//Generate Single Report for Parent
 		
-		reportProviderImpl.generateClassReport("3rd Class");
+		//reportProviderImpl.generateClassReport("3rd Class");
 		//Generate Report for a Class
-		//reportProviderImpl.generateReport("3rd Class");
+		reportProviderImpl.generateReport("Peter");
 		
 	}
 
