@@ -38,7 +38,6 @@ public class ReportServlet extends HttpServlet{
 		response.setContentLength(-1);
 		response.setHeader("Content-Transfer-Encoding", "binary");
 		response.setHeader("Content-Disposition","attachment; filename=\"myPdf.txt\"");//fileName
-
 		OutputStream out = response.getOutputStream();
 		byte[] buffer = new byte[10240];
 

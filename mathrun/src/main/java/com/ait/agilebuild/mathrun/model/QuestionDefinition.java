@@ -142,7 +142,11 @@ public class QuestionDefinition {
 	}
 	
 	public boolean isAnsweredCorrectly(){
-		return correct_answer == attempts.get(attempts.size()-1);
+		if(attempts != null && attempts.size() > 0){
+			return correct_answer == attempts.get(attempts.size()-1);
+		}else{
+			return false;
+		}
 	}
 
 }

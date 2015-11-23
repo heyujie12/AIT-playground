@@ -239,5 +239,12 @@ public class MachineLearning implements IMachineLearning{
 		return resultMap;
 	}
 
+	@Override
+	public Progression<QuestionDefinition> initProgression(int level) {
+		List<QuestionDefinition> prog = new ArrayList<>();
+		prog.add(qGenerator.getQuestion(level));
+		return new Progression<QuestionDefinition>(prog);
+	}
+
 
 }

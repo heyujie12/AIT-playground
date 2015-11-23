@@ -7,6 +7,10 @@ public class Progression<T> {
 	
 	private List<T> progression;
 
+	public Progression() {
+		progression = new ArrayList<>();
+	}
+
 	public Progression(List<T> list) {
 		this.progression = list;
 	}

@@ -4,16 +4,22 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import org.testng.annotations.Test;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.internal.util.reflection.Whitebox;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.ait.agilebuild.mathrun.api.IMachineLearning;
+import com.ait.agilebuild.mathrun.api.IMathRunDao;
 import com.ait.agilebuild.mathrun.api.IQuestionsGenerator;
 import com.ait.agilebuild.mathrun.model.Progression;
 import com.ait.agilebuild.mathrun.model.QuestionDefinition;
+import com.ait.agilebuild.mathrun.model.Student;
 
 public class TestMachineLearning {
 	
@@ -23,11 +29,39 @@ public class TestMachineLearning {
 
 	@BeforeMethod
 	public void setUp() throws Exception {
-		ml = new MachineLearning();
 		qGenerator = new QuestionsGenerator();
+		IMathRunDao mathrunDao = Mockito.mock(IMathRunDao.class);
+		Student s = Mockito.mock(Student.class);
+		List<QuestionDefinition> studentQuestions = new ArrayList<>();
+		studentQuestions = generateMockQuestions(1, 10);
+		studentQuestions.addAll(generateMockQuestions(2, 10));
+		Mockito.when(s.getAllQuestions()).thenReturn(studentQuestions);
+		
+		Mockito.when(mathrunDao.getQuestionsByLevel(1)).thenReturn(generateMockQuestions(1, 1000));
+		Mockito.when(mathrunDao.getQuestionsByLevel(2)).thenReturn(generateMockQuestions(2, 1000));
+		Mockito.when(mathrunDao.getStudentById(Mockito.anyLong())).thenReturn(s);
+		ml = new MachineLearning();
 		Whitebox.setInternalState(ml, "qGenerator", qGenerator);
+		Whitebox.setInternalState(ml, "mathrunDao", mathrunDao);
 	}
 	
+	private List<QuestionDefinition> generateMockQuestions(int level, int count) {
+		System.out.println("Mock questions generation is called with level = " + level + ", count = " + count);
+		List<QuestionDefinition> questions = new ArrayList<>();
+		for(int i=0; i<count; i++){
+			QuestionDefinition q = qGenerator.getQuestion(level);
+			List<Float> attempts = new ArrayList<>();
+			if(Math.random() <= 0.2){
+				attempts.add(0f);
+			}else{
+				attempts.add(q.getCorrect_answer());
+			}
+			q.setAttempts(attempts);
+			questions.add(q);
+		}
+		return questions;
+	}
+
 	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void testProduceNextQuestionWithNull() {
 		ml.produceNextQuestion(null);
@@ -191,4 +225,12 @@ public class TestMachineLearning {
 		q.setTime(time);
 		return q;
 	}
+	
+//	@Test
+//	public void testGenerateLevelProficiency(){
+//		Map<Integer, Double> map = ml.generateLevelProficiency(1l);
+//		for(Entry<Integer, Double> entry : map.entrySet()){
+//			System.out.println("Key: " + entry.getKey() + ", Value" + entry.getValue());
+//		}
+//	}
 }

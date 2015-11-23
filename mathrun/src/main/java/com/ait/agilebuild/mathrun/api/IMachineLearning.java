@@ -62,4 +62,6 @@ public interface IMachineLearning {
 	 *	@return Map<Integer, Distribution>
 	 */
 	public Map<Integer, Distribution> generateFirstAttemptOnAdjacentKeys(List<QuestionDefinition> list);
+
+	public Progression<QuestionDefinition> initProgression(int level);
 }
