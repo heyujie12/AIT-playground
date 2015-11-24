@@ -20,7 +20,7 @@ $(function(){
 <body>
 <%
 		System.out.println(session.getAttribute("username"));
-		;	
+		;
 		if((Student)session.getAttribute("stu")==null){
 			System.out.println("student not here");
 		}else{

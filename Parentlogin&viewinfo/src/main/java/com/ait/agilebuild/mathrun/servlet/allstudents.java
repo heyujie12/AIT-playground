@@ -45,7 +45,6 @@ public class allstudents extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		List<Student> ls = mathDAO.getStudents();
-		System.out.println("asd");
 		HttpSession session = request.getSession();	
 		session.setAttribute("stusinfo", ls);
 		System.out.println(ls.get(0));
