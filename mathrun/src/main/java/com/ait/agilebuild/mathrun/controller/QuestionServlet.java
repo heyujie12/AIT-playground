@@ -3,6 +3,7 @@ package com.ait.agilebuild.mathrun.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -57,9 +58,14 @@ public class QuestionServlet extends HttpServlet{
 
 
 	private Progression<QuestionDefinition> parseProgression(ObjectMapper mapper, String progStr) throws JsonParseException, JsonMappingException, IOException {
-		Progression<Map<String, String>> p = mapper.readValue(progStr, Progression.class);
+		Progression<Map<String, Object>> p = mapper.readValue(progStr, Progression.class);
+		List<QuestionDefinition> questions = new ArrayList<>();
+		for(Map<String, Object> map : p.getProgression()){
+			QuestionDefinition q = new QuestionDefinition(map);
+			questions.add(q);
+		}
 		System.out.println(p.size());
-		return initProgression("1");
+		return new Progression<>(questions);
 	}
 
 

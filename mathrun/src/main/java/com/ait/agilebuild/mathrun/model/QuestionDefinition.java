@@ -1,6 +1,8 @@
 package com.ait.agilebuild.mathrun.model;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.Basic;
 import javax.persistence.CollectionTable;
@@ -44,6 +46,29 @@ public class QuestionDefinition {
 	@Basic(fetch = FetchType.EAGER)
 	@JoinColumn(name = "game")
 	private Game game;
+	
+	public QuestionDefinition(){
+		
+	}
+	
+	public QuestionDefinition(Map<String, Object> map){
+		if(map == null){
+			return;
+		}
+		id = (int) map.get("id");
+		first_value = Float.parseFloat(map.get("first_value") + "");
+		second_value = Float.parseFloat(map.get("second_value") + "");
+		operator = (int) map.get("operator");
+		operatorCh = (String) map.get("operatorCh");
+		difficulty_level = (int) (map.get("difficulty_level"));
+		correct_answer = Float.parseFloat(map.get("correct_answer") + "");
+		remainder = (int) (map.get("remainder"));
+		attempts = new ArrayList<>();
+		for(Object o : (List<Object>) map.get("attempts")){
+			attempts.add(Float.parseFloat(o + ""));
+		}
+		attempt_duration = (List<Integer>) map.get("attempt_duration");
+	}
 
 	public long getId() {
 		return id;
