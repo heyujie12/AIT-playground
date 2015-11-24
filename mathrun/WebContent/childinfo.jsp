@@ -20,17 +20,12 @@ $(function(){
 <body>
 <%
 		System.out.println(session.getAttribute("username"));
-		;
+		;	
 		if((Student)session.getAttribute("stu")==null){
 			System.out.println("student not here");
 		}else{
 			System.out.println(((Student)session.getAttribute("stu")).getId()+"testlala");
 		}
-//		Long id=stu.getId();
-//		String name = stu.getName();
-//		String c_name = stu.getClassName();
-//		String t_name = stu.getTeacher().getName();
-//		System.out.println(id+name+c_name+t_name);
 %>
 
 <div class="infobox">

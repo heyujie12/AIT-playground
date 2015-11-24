@@ -1,4 +1,6 @@
 <%@page import="com.ait.agilebuild.mathrun.model.Student"%>
+<%@page import="java.util.List"%>
+<%@page import="com.ait.agilebuild.mathrun.impl.MathRunDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -19,25 +21,21 @@ $(function(){
 
 <body>
 <%
-		System.out.println(session.getAttribute("username"));
-		;	
-		if((Student)session.getAttribute("stu")==null){
-			System.out.println("student not here");
-		}else{
-			System.out.println(((Student)session.getAttribute("stu")).getId()+"testlala");
-		}
+	MathRunDao mrd ;
+	List<Student> ls = mrd.getStudents();
+	System.out.println(ls);
+	
 %>
-
 <div class="infobox">
 	<form action="" method="post">
-    	<table>
+    	<table cellpadding="2" cellspacing="2">
         	<tr>
-            	<td><label>ID:</label><input type="text" name="student_id" value="<%=((Student)session.getAttribute("stu")).getId()%>"/></td>
-                <td><label>Name:</label><input type="text" name="student_name" value="<%=((Student)session.getAttribute("stu")).getName()%>"/></td>
+            	<td><label>ID:</label><input type="text" value="<%=(ls.get(0)).getId() %>"/></td>
+                <td><label>Name:</label><input type="text" name="student_name"/></td>
             </tr>
             <tr>
-            	<td><label>Class Name:</label><input type="text" name="class_name" value="<%=((Student)session.getAttribute("stu")).getClassName()%>"/></td>
-                <td><label>Teacher:</label><input type="text" name="teacher_name" value="<%=((Student)session.getAttribute("stu")).getTeacher().getName()%>"/></td>
+            	<td><label>Class Name:</label><input type="text" name="class_name"/></td>
+                <td><label>Teacher:</label><input type="text" name="teacher_name"/></td>
             </tr>
             <tr>
             	<td><input type="submit" value="Submit" class="Button"/></td>
@@ -53,9 +51,8 @@ $(function(){
 
 <div class="screenbg">
 	<ul>
-		<li><img src="images/0.jpg"></li>
+		<li><a href="javascript:;"><img src="images/0.jpg"></a></li>
 	</ul>
 </div>
-
 </body>
 </html>

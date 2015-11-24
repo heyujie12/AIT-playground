@@ -8,6 +8,7 @@ import javax.persistence.Query;
 
 import com.ait.agilebuild.mathrun.api.IMathRunDao;
 import com.ait.agilebuild.mathrun.model.Game;
+import com.ait.agilebuild.mathrun.model.Student;
 
 public class MathRunDao implements IMathRunDao {
 
@@ -18,6 +19,12 @@ public class MathRunDao implements IMathRunDao {
 	public List<Game> getGames(long studentId) {
 		Query query = em.createQuery("SELECT g FROM Game g where g.student.id = :studentId");
 		query.setParameter("studentId", studentId);
+		return query.getResultList();
+	}
+	
+	public List<Student> getStudents(){
+		Query query = em.createQuery("SELECT s FROM Student s");
+		System.out.println(((Student)query.getResultList().get(0)).getId());
 		return query.getResultList();
 	}
 
